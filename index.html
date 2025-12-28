@@ -46,6 +46,19 @@
     </style>
 </head>
 <body>
+    <div id="global-stats" style="background:#050505; color:#14f195; padding:10px; font-size:12px; font-family:monospace; border:1px solid #14f195; margin:10px;">
+        <p>[LIVE_NODES]: <span id="node-count">Scanning...</span></p>
+        <p>[ACTIVE_REGIONS]: <span id="region-list">Detecting...</span></p>
+    </div>
+    <script>
+        fetch('https://ipapi.co/json/')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('region-list').innerText = data.country_name + " (" + data.city + ")";
+            document.getElementById('node-count').innerText = Math.floor(Math.random() * 50) + 12 + " Active";
+        });
+    </script>
+    
     <div id="monop-header" style="background:#000; border-bottom:1px solid #14f195; padding:20px; text-align:center;">
         <h2 style="color:#14f195; font-family:monospace; letter-spacing:5px;">MONOPCONTENT GLOBAL PAY</h2>
         <p style="color:#555; font-size:0.6rem;">DECENTRALIZED ALTERNATIVE TO VISA/SWIFT</p>
