@@ -3,98 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONOPCONTENT | QUANTUM ENGINE v10.4.2</title>
+    <title>MONOPCONTENT | SINGULARITY CORE v100.0</title>
     <style>
-        body { background: #00050a; color: #00d4ff; font-family: 'Inter', sans-serif; margin: 0; overflow: hidden; }
-        .hud-frame { border: 1px solid #00d4ff; height: 100vh; padding: 20px; box-sizing: border-box; position: relative; }
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow: hidden; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); }
+        .singularity-container { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         
-        /* 10-Year Advance UI */
-        .header { display: flex; justify-content: space-between; border-bottom: 2px solid #00d4ff; padding-bottom: 10px; }
-        .global-stats { font-size: 0.8rem; color: #fff; }
-        .matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-        
-        .panel { background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.3); padding: 15px; }
-        .pulse { animation: pulse-blue 2s infinite; }
-        @keyframes pulse-blue { 0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(0, 212, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); } }
+        .aura { position: absolute; width: 600px; height: 600px; background: rgba(0, 255, 150, 0.05); border-radius: 50%; filter: blur(80px); z-index: -1; animation: breathe 10s infinite; }
+        @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 0.6; } }
 
-        .price-future { font-size: 4rem; color: #fff; text-align: center; font-weight: 900; letter-spacing: -2px; }
-        .buy-now-btn { display: block; background: #00d4ff; color: #000; text-align: center; padding: 30px; text-decoration: none; font-weight: bold; font-size: 2rem; border-radius: 0; transition: 0.3s; }
-        .buy-now-btn:hover { background: #fff; box-shadow: 0 0 50px #00d4ff; }
+        .core-status { font-family: monospace; color: #00ff96; letter-spacing: 3px; font-size: 0.7rem; margin-bottom: 20px; }
+        .price-infinite { font-size: 5rem; font-weight: 100; margin: 20px 0; letter-spacing: -5px; }
         
-        #ai-log { font-family: monospace; font-size: 0.7rem; color: #00d4ff; height: 100px; overflow: hidden; }
+        .neural-feed { width: 300px; text-align: left; font-family: monospace; font-size: 0.6rem; color: #666; border-left: 1px solid #333; padding-left: 15px; margin-bottom: 40px; }
+        
+        .access-trigger { background: #fff; color: #000; padding: 25px 60px; text-decoration: none; font-weight: 900; letter-spacing: 5px; font-size: 1.2rem; transition: 0.5s; text-transform: uppercase; border: 1px solid #fff; }
+        .access-trigger:hover { background: transparent; color: #fff; box-shadow: 0 0 50px rgba(255,255,255,0.2); }
+        
+        .footer-info { position: absolute; bottom: 30px; font-size: 0.6rem; color: #444; text-transform: uppercase; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-    <div class="hud-frame">
+    <div class="aura"></div>
+    <div class="singularity-container">
+        <div class="core-status">● SINGULARITY ACTIVE // YEAR_2125 // ARCHITECT: JUST_RIGHT_DECS</div>
         
-    <div id='global-relay' style='background:rgba(0, 212, 255, 0.1); border-top:1px solid #00d4ff; padding:10px; font-size:0.7rem; color:#fff; display:flex; justify-content:space-around;'>
-        <span>🌎 TOKYO: ACTIVE</span>
-        <span>🌍 LONDON: ACTIVE</span>
-        <span>🌎 NEW YORK: ACTIVE</span>
-        <span id='currency-swap' style='color:#00ff41;'>USD: $12.65</span>
-    </div>
-    <div class="header">
-            <div><strong>MONOPCONTENT // QUANTUM CORE</strong></div>
-            <div class="global-stats">ESTABLISHED: 2025 // SIMULATED_YEAR: 2035</div>
+        <h1 style="font-weight: 900; font-size: 3rem; margin: 0;">MONOPCONTENT 1.1</h1>
+        <p style="color: #888; letter-spacing: 2px;">AUTONOMOUS ASSET SYNTHESIS ENGINE</p>
+
+        <div class="price-infinite">£10.00</div>
+
+        <div class="neural-feed" id="feed">
+            > Neural net refining assets...<br>
+            > Global liquidity pool verified...<br>
+            > Self-healing build sequence 100%...<br>
         </div>
 
-        <div class="matrix-grid">
-            <div class="panel">
-                <h3 style="margin-top:0">🛰️ GLOBAL NODE REACH</h3>
-                <div style="font-size: 2rem; color: #fff;">142,894 <small style="font-size:0.8rem; color:#00d4ff;">NODES</small></div>
-                <div id="ai-log">> AI Optimization active...<br>> Market volatility neutralized...<br>> Assets self-replicating...</div>
-            </div>
-            <div class="panel pulse">
-                <h3 style="margin-top:0">💎 ASSET VALUE</h3>
-                <div style="font-size: 2rem; color: #fff;">ESTIMATED: £1,450</div>
-                <div style="color: #00ff41;">OFFER STATUS: ARCHIVAL PRICING ACTIVE</div>
-            </div>
-        </div>
+        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="access-trigger">SYNC NOW</a>
 
-        <div style="margin-top:40px;">
-            <p style="text-align:center; text-transform:uppercase; letter-spacing:5px;">Direct Access to Decadal Intelligence</p>
-            <div class="price-future">£10.00</div>
-            <p style="text-align:center; color:#888;">Note: You are accessing 2035-grade assets at 2025 launch pricing.</p>
-        </div>
-
-        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="buy-now-btn">INITIALIZE QUANTUM DOWNLOAD</a>
-    <div id='founder-seal' style='margin-top:30px; border:1px solid #ff003c; background:rgba(255,0,60,0.1); padding:15px; text-align:left; font-family:monospace; position:relative;'>
-        <div style='position:absolute; top:-10px; left:10px; background:#000; padding:0 5px; color:#ff003c; font-size:0.6rem; font-weight:bold;'>AUTHENTICITY_LOCK</div>
-        <span style='color:#ff003c;'>[ORIGIN]: JUST_RIGHT_DECORATORS_OPS</span><br>
-        <span style='color:#fff; font-size:0.7rem;'>HASH: 8945e46-DECADAL-SHIFT-2035-MONOP</span><br>
-        <span style='color:#888; font-size:0.6rem;'>This asset is verified for global distribution under the 10-Year Evolution Protocol.</span>
-    </div>
-    
-
-        <div style="position:absolute; bottom:20px; width:95%; text-align:center; font-size:0.6rem; letter-spacing:2px; color:rgba(0, 212, 255, 0.5);">
-            SECURE PROTOCOL // END-TO-END QUANTUM ENCRYPTION // JUST RIGHT DECORATORS OPS 10-YEAR ANNIVERSARY
+        <div class="footer-info">
+            SOVEREIGN DATA CORE // ENCRYPTED VIA NEURAL-LINK // NON-CUSTODIAL ASSET DELIVERY
         </div>
     </div>
 
     <script>
-        const log = document.getElementById('ai-log');
-        const lines = [
-            "> Fetching neural weights...",
-            "> Optimizing distribution sub-routines...",
-            "> Verifying decentralized ledger...",
-            "> Scaling infrastructure to Mars-orbit nodes...",
-            "> Hyper-inflation bypass successful..."
+        const feed = document.getElementById('feed');
+        const logs = [
+            "> Synthesizing Day 36,500 data...",
+            "> Evolution loop closed...",
+            "> Value extraction optimized...",
+            "> Latency: 0.0001ms...",
+            "> Distributed intelligence active..."
         ];
         let i = 0;
         setInterval(() => {
-            log.innerHTML += lines[i % lines.length] + "<br>";
-            if(log.childNodes.length > 8) log.removeChild(log.firstChild);
+            feed.innerHTML += logs[i % logs.length] + "<br>";
+            if(feed.childNodes.length > 8) feed.removeChild(feed.firstChild);
             i++;
-        }, 1500);
+        }, 2000);
     </script>
-
-        <script>
-            const currencies = ['USD: $12.65', 'EUR: €11.90', 'JPY: ¥1,940', 'GBP: £10.00'];
-            let cIndex = 0;
-            setInterval(() => {
-                document.getElementById('currency-swap').innerText = currencies[cIndex % currencies.length];
-                cIndex++;
-            }, 4000);
-        </script>
-        </body>
+</body>
 </html>
