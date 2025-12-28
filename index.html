@@ -70,5 +70,15 @@
         setTimeout(showToast, 3000);
         setInterval(showToast, Math.floor(Math.random() * 5000) + 7000);
     </script>
+    
+    <script>
+        let paymentDemanded = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !paymentDemanded) {
+                paymentDemanded = true;
+                alert("⚠️ WARNING: EXIT DETECTED. The Vault deletion cannot be paused. Complete the £10 extraction now or the link will be PERMANENTLY revoked.");
+            }
+        });
+    </script>
     </body>
 </html>
