@@ -343,5 +343,22 @@
             }, 3000);
         }
     </script>
+    
+    <section id="merchant-portal" style="background:#111; border:2px solid #14f195; border-radius:10px; padding:20px; margin:20px 0;">
+        <h2 style="color:#14f195; margin-top:0;">💼 MERCHANT INTERCEPT NODE</h2>
+        <p>Replace Visa/Stripe 3% fees with the 0.5% Monop-Protocol.</p>
+        <div style="display:flex; gap:10px;">
+            <input type="number" id="tx-amount" placeholder="Amount ($)" style="background:#000; color:#fff; border:1px solid #333; padding:10px; flex:1;">
+            <button onclick="generateTollLink()" style="background:#14f195; color:#000; border:none; font-weight:bold; cursor:pointer; padding:10px 20px;">GENERATE TOLL-LINK</button>
+        </div>
+        <p id="link-output" style="font-size:12px; color:#888; margin-top:10px;"></p>
+    </section>
+    <script>
+    function generateTollLink() {
+        const amt = document.getElementById('tx-amount').value;
+        const link = `https://justrightdecorators-ops.github.io/Monopcontent1.1/?pay=${amt}&toll=0.005`;
+        document.getElementById('link-output').innerText = `🔗 SHARE TO INTERCEPT: ${link}`;
+    }
+    </script>
     </body>
 </html>
