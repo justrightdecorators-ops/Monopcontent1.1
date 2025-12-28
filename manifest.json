@@ -1,0 +1,13 @@
+{
+        "name": "Monopcontent 1.1: The Singularity",
+        "short_name": "Singularity",
+        "start_url": ".",
+        "display": "standalone",
+        "background_color": "#000000",
+        "theme_color": "#14f195",
+        "icons": [{
+            "src": "https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=MONOP",
+            "sizes": "192x192",
+            "type": "image/png"
+        }]
+    }
