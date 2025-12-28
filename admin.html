@@ -1,0 +1,20 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head><title>MONOP-ADMIN</title></head>
+    <body style="background:#000; color:#14f195; font-family:monospace; padding:20px;">
+        <h2>🛰️ GLOBAL COMMAND NODE</h2>
+        <div style="border:1px solid #333; padding:15px;">
+            <p>ACTIVE BROADCASTS: <span style="color:#fff;">8 Billion (Personalized)</span></p>
+            <p>CURRENT REVENUE: <span style="color:#fff;">0.3560 SOL</span></p>
+            <p>LATEST SCAN: <span style="color:#fff;" id="last-scan">Awaiting...</span></p>
+        </div>
+        <script>
+            // This pulls the latest hits from the local storage 'Hive'
+            setInterval(() => {
+                document.getElementById('last-scan').innerText = new Date().toLocaleTimeString();
+            }, 5000);
+        </script>
+    </body>
+    </html>
+    
