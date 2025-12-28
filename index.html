@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        #stripe-button {
+            background: #6772e5;
+            color: white;
+            padding: 15px 30px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            animation: stripe-pulse 1.5s infinite;
+            cursor: pointer;
+        }
+        @keyframes stripe-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(103, 114, 229, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(103, 114, 229, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(103, 114, 229, 0); }
+        }
+    </style>
+    
     <link rel="manifest" href="manifest.json">
     <script>
         if ('serviceWorker' in navigator) {
