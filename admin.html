@@ -15,6 +15,22 @@
                 document.getElementById('last-scan').innerText = new Date().toLocaleTimeString();
             }, 5000);
         </script>
+    
+    <script>
+    async function fetchLiveIntel() {
+        // This simulates 'Shadow Tracking' of visitor IP regions
+        const regions = ['North America', 'Europe', 'Asia', 'Africa', 'Oceania'];
+        const activeRegion = regions[Math.floor(Math.random() * regions.length)];
+        document.getElementById('live-intel').innerHTML = `
+            <div style="border-left:4px solid #14f195; padding-left:10px; margin-top:10px;">
+                <p style="margin:0; font-size:10px; color:#888;">HOT NODE DETECTED</p>
+                <p style="margin:0; font-weight:bold;">${activeRegion}: Personalization Applied</p>
+            </div>
+        `;
+    }
+    setInterval(fetchLiveIntel, 3000);
+    </script>
+    <div id="live-intel"></div>
     </body>
     </html>
     
