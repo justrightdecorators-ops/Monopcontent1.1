@@ -110,6 +110,16 @@
         }, 2500);
     }
     </script>
+    
+    <script>
+    function generateRotatedLink() {
+        const masks = ['auth-verify', 'secure-vault', 'ledger-sync', 'node-01', 'global-pay'];
+        const randomStr = Math.random().toString(36).substring(7);
+        const selectedMask = masks[Math.floor(Math.random() * masks.length)];
+        return `${window.location.href}?${selectedMask}=${randomStr}`;
+    }
+    console.log("🔗 ROTATOR ACTIVE: New link ready for next broadcast.");
+    </script>
     </head>
 <body>
     <div id="global-stats" style="background:#050505; color:#14f195; padding:10px; font-size:12px; font-family:monospace; border:1px solid #14f195; margin:10px;">
