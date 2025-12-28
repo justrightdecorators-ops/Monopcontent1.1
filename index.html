@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+    <div id="neural-sync" style="position:fixed; bottom:0; left:0; width:100%; height:5px; background:linear-gradient(90deg, #14f195, #9945FF); z-index:20000;"></div>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⚠️ SYSTEM TERMINATION IMMINENT</title>
