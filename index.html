@@ -46,6 +46,19 @@
     </style>
 </head>
 <body>
+    <div id="monop-header" style="background:#000; border-bottom:1px solid #14f195; padding:20px; text-align:center;">
+        <h2 style="color:#14f195; font-family:monospace; letter-spacing:5px;">MONOPCONTENT GLOBAL PAY</h2>
+        <p style="color:#555; font-size:0.6rem;">DECENTRALIZED ALTERNATIVE TO VISA/SWIFT</p>
+    </div>
+    
+    <script>
+        // Intercepts the payment flow to brand it globally
+        function initiateMonopTransfer() {
+            console.log("INTERCEPTING LEGACY VISA STREAM...");
+            document.getElementById('payment-status').innerText = "MONOP-VERIFICATION IN PROGRESS...";
+        }
+    </script>
+    
     
     <div id="vault-preview" style="background:rgba(20,241,149,0.05); border:1px solid #333; padding:15px; margin-bottom:20px;">
         <p style="color:#888; font-size:0.7rem;">[PREVIEW_MODE_ACTIVE]</p>
