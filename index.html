@@ -30,7 +30,11 @@
         <h1 style="font-weight: 900; font-size: 3rem; margin: 0;">MONOPCONTENT 1.1</h1>
         <p style="color: #888; letter-spacing: 2px;">AUTONOMOUS ASSET SYNTHESIS ENGINE</p>
 
-        <div class="price-infinite">£10.00</div>
+        
+    <div id='scarcity-pulse' style='margin-bottom:20px; border:1px solid #00ff96; padding:10px; font-size:0.7rem; background:rgba(0,255,150,0.05);'>
+        <span style='color:#00ff96;'>[REMAINING SYNC SLOTS]:</span> <span id='slot-count' style='color:#fff; font-weight:bold;'>14</span>
+    </div>
+    <div class="price-infinite">£10.00</div>
 
         <div class="neural-feed" id="feed">
             > Neural net refining assets...<br>
@@ -61,5 +65,17 @@
             i++;
         }, 2000);
     </script>
-</body>
+
+        <script>
+            let slots = 14;
+            setInterval(() => {
+                if (slots > 3 && Math.random() > 0.8) {
+                    slots--;
+                    document.getElementById('slot-count').innerText = slots;
+                    document.getElementById('slot-count').style.color = '#ff003c';
+                    setTimeout(() => { document.getElementById('slot-count').style.color = '#fff'; }, 500);
+                }
+            }, 15000);
+        </script>
+        </body>
 </html>
