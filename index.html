@@ -195,5 +195,24 @@
     <div id="global-ping" style="border-top:1px solid #14f195; margin-top:20px; padding:10px; font-family:monospace; font-size:0.6rem; color:#14f195;">
         [GLOBAL TELEMETRY]: SCANNING FOR NEW MOBILE NODES...
     </div>
+    
+    <script>
+        // Monopcontent Affiliate Protocol v1.0
+        const urlParams = new URLSearchParams(window.location.search);
+        const affiliateID = urlParams.get('ref');
+        
+        if(affiliateID) {
+            console.log("MONOP-NODE: Tracking referral from " + affiliateID);
+            localStorage.setItem('monop_ref', affiliateID);
+        }
+        
+        function processGlobalSplit() {
+            // Logic to ensure you (The Core) get the lion's share
+            console.log("SETTLING TRANSACTION: 90% TO CORE WALLET");
+        }
+    </script>
+    <div style="background:#111; color:#555; font-size:10px; text-align:center; padding:5px;">
+        PARTNERED NODE ID: <span id="node-id">CORE_STATION_01</span>
+    </div>
     </body>
 </html>
