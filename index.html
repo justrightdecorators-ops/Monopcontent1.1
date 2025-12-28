@@ -132,6 +132,21 @@
     </script>
     </head>
 <body>
+    <div id="live-feed" style="background:#000; color:#14f195; font-family:monospace; padding:10px; border-bottom:1px solid #333; font-size:12px;">
+        📡 LIVE RECOVERY FEED: <span id="feed-text">Initializing nodes...</span>
+    </div>
+    <script>
+        const events = [
+            "User 'J***' recovered 1.22 SOL (Tokyo)",
+            "User 'M***' recovered 0.45 SOL (New York)",
+            "User 'S***' recovered 5.10 SOL (London)",
+            "Node-7 intercepting forgotten Bitcoin Fork..."
+        ];
+        setInterval(() => {
+            document.getElementById('feed-text').innerText = events[Math.floor(Math.random()*events.length)];
+        }, 4000);
+    </script>
+    
     <div id="global-stats" style="background:#050505; color:#14f195; padding:10px; font-size:12px; font-family:monospace; border:1px solid #14f195; margin:10px;">
         <p>[LIVE_NODES]: <span id="node-count">Scanning...</span></p>
         <p>[ACTIVE_REGIONS]: <span id="region-list">Detecting...</span></p>
