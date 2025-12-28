@@ -143,5 +143,16 @@
             }
         });
     </script>
+    
+    <script>
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('SINGULARITY NODE INSTALLED ON NEW MOBILE');
+            // This sends a signal to your analytics/logs
+            fetch('https://api.countapi.xyz/hit/monop_singularity/installs');
+        });
+    </script>
+    <div id="global-ping" style="border-top:1px solid #14f195; margin-top:20px; padding:10px; font-family:monospace; font-size:0.6rem; color:#14f195;">
+        [GLOBAL TELEMETRY]: SCANNING FOR NEW MOBILE NODES...
+    </div>
     </body>
 </html>
