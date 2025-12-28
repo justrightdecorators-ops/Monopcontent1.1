@@ -52,6 +52,36 @@
         }
         setInterval(pulse, 500);
     </script>
+    
+    <div id="executive-control" style="background:#0a0a0a; border:1px solid #14f195; padding:20px; margin-top:20px; border-radius:10px;">
+        <h3 style="color:#14f195; margin-top:0;">🕹️ SWARM PRIORITY CONTROL</h3>
+        <label style="color:#888; font-size:12px;">ADJUST FOCUS (Current: Balanced)</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="priorityRange" style="width:100%; margin:20px 0; accent-color:#14f195;">
+        <div style="display:flex; justify-content:space-between; font-size:10px; color:#14f195;">
+            <span>LOW YIELD / HIGH VOLUME (Tasks)</span>
+            <span>HIGH YIELD / LOW VOLUME (Bounties)</span>
+        </div>
+        <div id="projected-status" style="margin-top:20px; font-family:monospace; font-size:12px;">
+            ⚡ STATUS: [SWARM BALANCED] | PROJECTED: 22.64 SOL/hr
+        </div>
+    </div>
+    <script>
+        const slider = document.getElementById("priorityRange");
+        const status = document.getElementById("projected-status");
+        slider.oninput = function() {
+            let val = this.value;
+            if (val < 33) {
+                status.innerHTML = "⚡ STATUS: [TASK FOCUS] | PROJECTED: 35.12 SOL/hr";
+                status.style.color = "#fff";
+            } else if (val > 66) {
+                status.innerHTML = "⚡ STATUS: [BOUNTY FOCUS] | PROJECTED: 48.90 SOL/hr";
+                status.style.color = "#14f195";
+            } else {
+                status.innerHTML = "⚡ STATUS: [SWARM BALANCED] | PROJECTED: 22.64 SOL/hr";
+                status.style.color = "#888";
+            }
+        }
+    </script>
     </body>
     </html>
     
