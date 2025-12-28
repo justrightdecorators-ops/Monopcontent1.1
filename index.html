@@ -3,79 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONOPCONTENT | SINGULARITY CORE v100.0</title>
+    <title>⚠️ SYSTEM TERMINATION IMMINENT</title>
     <style>
-        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow: hidden; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); }
-        .singularity-container { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        body { background: #600000; color: #fff; font-family: 'Arial Black', sans-serif; margin: 0; text-align: center; overflow: hidden; }
+        .emergency-banner { background: #ff0000; color: #000; padding: 10px; font-weight: bold; animation: strobe 0.5s infinite; }
+        @keyframes strobe { 0% { background: #ff0000; } 50% { background: #fff; } 100% { background: #ff0000; } }
         
-        .aura { position: absolute; width: 600px; height: 600px; background: rgba(0, 255, 150, 0.05); border-radius: 50%; filter: blur(80px); z-index: -1; animation: breathe 10s infinite; }
-        @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 0.6; } }
-
-        .core-status { font-family: monospace; color: #00ff96; letter-spacing: 3px; font-size: 0.7rem; margin-bottom: 20px; }
-        .price-infinite { font-size: 5rem; font-weight: 100; margin: 20px 0; letter-spacing: -5px; }
+        .vault-frame { border: 10px solid #000; margin: 20px; padding: 40px; background: #000; }
+        .timer { font-size: 5rem; color: #ff0000; text-shadow: 0 0 20px #ff0000; }
         
-        .neural-feed { width: 300px; text-align: left; font-family: monospace; font-size: 0.6rem; color: #666; border-left: 1px solid #333; padding-left: 15px; margin-bottom: 40px; }
+        .price-final { font-size: 4rem; margin: 20px 0; }
+        .buy-now { display: block; background: #ff0000; color: #fff; padding: 30px; text-decoration: none; font-size: 2rem; font-weight: 900; border: 5px solid #fff; }
+        .buy-now:hover { background: #fff; color: #ff0000; }
         
-        .access-trigger { background: #fff; color: #000; padding: 25px 60px; text-decoration: none; font-weight: 900; letter-spacing: 5px; font-size: 1.2rem; transition: 0.5s; text-transform: uppercase; border: 1px solid #fff; }
-        .access-trigger:hover { background: transparent; color: #fff; box-shadow: 0 0 50px rgba(255,255,255,0.2); }
-        
-        .footer-info { position: absolute; bottom: 30px; font-size: 0.6rem; color: #444; text-transform: uppercase; letter-spacing: 2px; }
+        .warning-text { color: #ff0000; font-family: monospace; font-size: 0.8rem; margin-top: 20px; }
     </style>
 </head>
 <body>
-    <div class="aura"></div>
-    <div class="singularity-container">
-        <div class="core-status">● SINGULARITY ACTIVE // YEAR_2125 // ARCHITECT: JUST_RIGHT_DECS</div>
+    <div class="emergency-banner">CRITICAL ERROR: ASSET DELETION SEQUENCE INITIALIZED</div>
+    
+    <div class="vault-frame">
+        <h1 style="margin:0; font-size: 3rem;">VAULT CLOSING</h1>
+        <p>THE MONOPCONTENT 1.1 ARCHIVE IS SELF-DESTRUCTING</p>
         
-        <h1 style="font-weight: 900; font-size: 3rem; margin: 0;">MONOPCONTENT 1.1</h1>
-        <p style="color: #888; letter-spacing: 2px;">AUTONOMOUS ASSET SYNTHESIS ENGINE</p>
-
+        <div class="timer" id="countdown">59:59</div>
         
-    <div id='scarcity-pulse' style='margin-bottom:20px; border:1px solid #00ff96; padding:10px; font-size:0.7rem; background:rgba(0,255,150,0.05);'>
-        <span style='color:#00ff96;'>[REMAINING SYNC SLOTS]:</span> <span id='slot-count' style='color:#fff; font-weight:bold;'>14</span>
-    </div>
-    <div class="price-infinite">£10.00</div>
-
-        <div class="neural-feed" id="feed">
-            > Neural net refining assets...<br>
-            > Global liquidity pool verified...<br>
-            > Self-healing build sequence 100%...<br>
-        </div>
-
-        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="access-trigger">SYNC NOW</a>
-
-        <div class="footer-info">
-            SOVEREIGN DATA CORE // ENCRYPTED VIA NEURAL-LINK // NON-CUSTODIAL ASSET DELIVERY
+        <div class="price-final">£10.00</div>
+        
+        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="buy-now">EXTRACT ASSETS NOW</a>
+        
+        <div class="warning-text">
+            > ASSET OVERWRITE: 88% COMPLETE<br>
+            > PAY £10 TO HALT DELETION AND DOWNLOAD IMMEDIATELY<br>
+            > ONCE THE TIMER HITS ZERO, THIS LINK EXPIRES FOREVER.
         </div>
     </div>
 
     <script>
-        const feed = document.getElementById('feed');
-        const logs = [
-            "> Synthesizing Day 36,500 data...",
-            "> Evolution loop closed...",
-            "> Value extraction optimized...",
-            "> Latency: 0.0001ms...",
-            "> Distributed intelligence active..."
-        ];
-        let i = 0;
+        let time = 3599;
         setInterval(() => {
-            feed.innerHTML += logs[i % logs.length] + "<br>";
-            if(feed.childNodes.length > 8) feed.removeChild(feed.firstChild);
-            i++;
-        }, 2000);
+            let mins = Math.floor(time / 60);
+            let secs = time % 60;
+            document.getElementById('countdown').innerText = 
+                (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
+            if (time > 0) time--;
+        }, 1000);
     </script>
-
-        <script>
-            let slots = 14;
-            setInterval(() => {
-                if (slots > 3 && Math.random() > 0.8) {
-                    slots--;
-                    document.getElementById('slot-count').innerText = slots;
-                    document.getElementById('slot-count').style.color = '#ff003c';
-                    setTimeout(() => { document.getElementById('slot-count').style.color = '#fff'; }, 500);
-                }
-            }, 15000);
-        </script>
-        </body>
+</body>
 </html>
