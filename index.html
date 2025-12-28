@@ -3,61 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONOPCONTENT 1.1 | ENGINE v1.1.0</title>
+    <title>MONOPCONTENT 1.1 | COMPETITOR LEVEL v1.2</title>
     <style>
-        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .engine-frame { border: 2px solid #00ff41; padding: 30px; max-width: 600px; background: rgba(0, 20, 0, 0.9); box-shadow: 0 0 20px #00ff41; }
-        .header { border-bottom: 1px solid #00ff41; padding-bottom: 10px; margin-bottom: 20px; }
-        .terminal-text { font-size: 0.9rem; line-height: 1.4; }
-        .file-structure { background: #050505; border: 1px solid #333; padding: 15px; margin: 20px 0; color: #58a6ff; }
-        .evolution-meter { margin: 20px 0; border: 1px solid #00ff41; height: 30px; position: relative; }
-        .progress { background: #00ff41; width: 20%; height: 100%; }
-        .price-tag { font-size: 2.5rem; color: #fff; text-shadow: 0 0 10px #00ff41; margin: 20px 0; text-align: center; }
-        .buy-btn { display: block; background: #00ff41; color: #000; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 4px; }
-        .buy-btn:hover { background: #fff; box-shadow: 0 0 30px #fff; }
-        .status-blink { animation: blink 1s infinite; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+        body { background: #050505; color: #00ff41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow-x: hidden; }
+        .engine-frame { border: 2px solid #00ff41; padding: 30px; max-width: 700px; margin: auto; background: rgba(0, 10, 0, 0.95); position: relative; }
+        
+        /* Facebook-style Notification */
+        #notification {
+            position: fixed; bottom: 20px; left: 20px; background: #1a1a1a; border: 1px solid #00ff41;
+            padding: 15px; border-radius: 5px; display: none; z-index: 1000; color: #fff; font-size: 0.8rem;
+        }
+
+        .scarcity-bar { background: #f00; color: #fff; padding: 5px; text-align: center; font-weight: bold; font-size: 0.8rem; margin-bottom: 20px; }
+        .log-box { background: #000; height: 100px; overflow-y: hidden; border: 1px solid #333; padding: 10px; font-size: 0.7rem; color: #888; margin: 15px 0; }
+        .price-tag { font-size: 3rem; color: #fff; text-align: center; margin: 10px 0; }
+        .buy-btn { display: block; background: #00ff41; color: #000; text-align: center; padding: 25px; text-decoration: none; font-weight: bold; font-size: 1.5rem; border-radius: 2px; text-transform: uppercase; }
+        
+        .user-count { color: #58a6ff; font-weight: bold; }
     </style>
 </head>
 <body>
+    <div class="scarcity-bar">⚠️ DAY 2 EVOLUTION ENDS IN: 04:22:18</div>
+    
     <div class="engine-frame">
-        <div class="header">
-            <div style="float: right;" class="status-blink">● LIVE ENGINE</div>
-            <strong>SYSTEM: MONOPCONTENT 1.1</strong><br>
-            <span>STATUS: EVOLVING (DAY 2/10)</span>
+        <div style="font-size: 0.7rem; color: #00ff41; margin-bottom: 10px;">
+            NETWORK_STATUS: CONNECTED // NODES: <span class="user-count">412</span> ACTIVE
+        </div>
+        
+        <h1 style="color:#fff; margin:0;">MONOPCONTENT 1.1</h1>
+        <p>The self-improving asset engine. Competing with the status quo.</p>
+
+        <div class="log-box" id="log">
+            > Initializing user tracking...<br>
+            > Node 88.2.1.4 connected...<br>
+            > Node 92.1.1.0 accessed assets...<br>
         </div>
 
-        <div class="terminal-text">
-            > INITIALIZING VISIBILITY LAYER...<br>
-            > DECODING ASSET PACKAGE...<br>
-            > <span style="color:#fff">VERIFIED CONTENTS:</span>
-        </div>
-
-        <div class="file-structure">
-            📦 Monopcontent_Assets.zip<br>
-            ├── 📂 Ops_Manuals (PDF)<br>
-            ├── 📂 Visual_Assets (High-Res)<br>
-            ├── 📂 Code_Hooks (Python)<br>
-            └── 📄 README_Strategy.txt
-        </div>
-
-        <div class="terminal-text">
-            > EVOLUTION PROGRESS:
-        </div>
-        <div class="evolution-meter">
-            <div class="progress"></div>
-            <div style="position:absolute; top:5px; left:45%; color:#000; font-weight:bold; font-size:0.8rem;">20% COMPLETE</div>
+        <div style="background:#111; padding:15px; border-left: 4px solid #00ff41;">
+            <strong>CORE ASSETS UNLOCKED:</strong><br>
+            • Ops Manual v1.1 [ENCRYPTED]<br>
+            • Visual Master Kit [HIGH-SPEED]<br>
+            • Python Automation Hooks [LIVE]
         </div>
 
         <div class="price-tag">£10.00</div>
-
-        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="buy-btn">ACCESS THE ENGINE</a>
-
-        <div style="margin-top:20px; font-size:0.7rem; color:#888;">
-            OFFICIAL DEPLOYMENT: Just Right Decorators Ops<br>
-            ENCRYPTION: Stripe SSL Secure<br>
-            UPTIME: 99.9%
-        </div>
+        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="buy-btn">JOIN THE NETWORK</a>
     </div>
+
+    <div id="notification">👤 Someone from <strong>London</strong> just joined the network.</div>
+
+    <script>
+        // Simulate "Live" Activity like Facebook
+        const log = document.getElementById('log');
+        const notify = document.getElementById('notification');
+        
+        setInterval(() => {
+            const nodes = ['192.168.1.1', '82.44.1.2', '104.12.1.9', '77.2.1.4'];
+            const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+            log.innerHTML += '> Connection from ' + randomNode + ' verified...<br>';
+            if(log.childNodes.length > 10) log.removeChild(log.firstChild);
+        }, 3000);
+
+        setInterval(() => {
+            notify.style.display = 'block';
+            setTimeout(() => { notify.style.display = 'none'; }, 4000);
+        }, 12000);
+    </script>
 </body>
 </html>
