@@ -3,42 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monopcontent 1.1 | Official Portal</title>
+    <title>MONOPCONTENT 1.1 | ENGINE v1.1.0</title>
     <style>
-        body { background: #0d1117; color: #c9d1d9; font-family: -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .container { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 40px; max-width: 450px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .badge { background: #238636; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
-        h1 { color: white; margin-top: 20px; font-size: 1.8rem; }
-        .price { font-size: 2.5rem; color: #58a6ff; font-weight: bold; margin: 20px 0; }
-        .features { text-align: left; margin: 25px 0; padding: 0; list-style: none; font-size: 0.95rem; }
-        .features li { margin-bottom: 10px; display: flex; align-items: center; }
-        .features li::before { content: "✔"; color: #238636; margin-right: 10px; font-weight: bold; }
-        .buy-btn { background: #238636; color: white; text-decoration: none; padding: 18px; border-radius: 8px; display: block; font-weight: bold; font-size: 1.2rem; transition: 0.2s; border: 1px solid rgba(255,255,255,0.1); }
-        .buy-btn:hover { background: #2ea043; transform: translateY(-2px); }
-        .footer { margin-top: 30px; font-size: 0.75rem; color: #8b949e; border-top: 1px solid #30363d; padding-top: 20px; }
+        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .engine-frame { border: 2px solid #00ff41; padding: 30px; max-width: 600px; background: rgba(0, 20, 0, 0.9); box-shadow: 0 0 20px #00ff41; }
+        .header { border-bottom: 1px solid #00ff41; padding-bottom: 10px; margin-bottom: 20px; }
+        .terminal-text { font-size: 0.9rem; line-height: 1.4; }
+        .file-structure { background: #050505; border: 1px solid #333; padding: 15px; margin: 20px 0; color: #58a6ff; }
+        .evolution-meter { margin: 20px 0; border: 1px solid #00ff41; height: 30px; position: relative; }
+        .progress { background: #00ff41; width: 20%; height: 100%; }
+        .price-tag { font-size: 2.5rem; color: #fff; text-shadow: 0 0 10px #00ff41; margin: 20px 0; text-align: center; }
+        .buy-btn { display: block; background: #00ff41; color: #000; text-align: center; padding: 20px; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 4px; }
+        .buy-btn:hover { background: #fff; box-shadow: 0 0 30px #fff; }
+        .status-blink { animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <span class="badge">Live Production Access</span>
-        <h1>Monopcontent 1.1</h1>
-        <p>Complete Digital Asset Bundle & Operations Kit</p>
-        
-        <div class="price">£10.00</div>
-        
-        <ul class="features">
-            <li>Full Monopcontent 1.1 Source Files</li>
-            <li>Instant PDF Operational Guides</li>
-            <li>Direct Download Access After Payment</li>
-            <li>Secure Stripe-Encrypted Checkout</li>
-        </ul>
+    <div class="engine-frame">
+        <div class="header">
+            <div style="float: right;" class="status-blink">● LIVE ENGINE</div>
+            <strong>SYSTEM: MONOPCONTENT 1.1</strong><br>
+            <span>STATUS: EVOLVING (DAY 2/10)</span>
+        </div>
 
-        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="buy-btn">GET ACCESS NOW</a>
+        <div class="terminal-text">
+            > INITIALIZING VISIBILITY LAYER...<br>
+            > DECODING ASSET PACKAGE...<br>
+            > <span style="color:#fff">VERIFIED CONTENTS:</span>
+        </div>
 
-        <div class="footer">
-            Managed by <strong>Just Right Decorators Ops</strong><br>
-            Secure Asset ID: prod_TglaIJYcRtnOUr<br>
-            <p style="margin-top:10px; color:#58a6ff;">HTTPS SECURE CONNECTION ACTIVE</p>
+        <div class="file-structure">
+            📦 Monopcontent_Assets.zip<br>
+            ├── 📂 Ops_Manuals (PDF)<br>
+            ├── 📂 Visual_Assets (High-Res)<br>
+            ├── 📂 Code_Hooks (Python)<br>
+            └── 📄 README_Strategy.txt
+        </div>
+
+        <div class="terminal-text">
+            > EVOLUTION PROGRESS:
+        </div>
+        <div class="evolution-meter">
+            <div class="progress"></div>
+            <div style="position:absolute; top:5px; left:45%; color:#000; font-weight:bold; font-size:0.8rem;">20% COMPLETE</div>
+        </div>
+
+        <div class="price-tag">£10.00</div>
+
+        <a href="https://buy.stripe.com/6oUcN73QKgAy5xXfr2bbG00" class="buy-btn">ACCESS THE ENGINE</a>
+
+        <div style="margin-top:20px; font-size:0.7rem; color:#888;">
+            OFFICIAL DEPLOYMENT: Just Right Decorators Ops<br>
+            ENCRYPTION: Stripe SSL Secure<br>
+            UPTIME: 99.9%
         </div>
     </div>
 </body>
