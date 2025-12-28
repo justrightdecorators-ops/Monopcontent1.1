@@ -31,6 +31,27 @@
     setInterval(fetchLiveIntel, 3000);
     </script>
     <div id="live-intel"></div>
+    
+    <div id="map-container" style="height:300px; background:#050505; border:1px solid #14f195; margin-top:20px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:10px; left:10px; color:#14f195; font-size:10px; z-index:10;">🛰️ LIVE INTERCEPT MAP</div>
+        <canvas id="mapCanvas"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('mapCanvas').getContext('2d');
+        // Logic to render pulsing 'Toll-Points' across a stylized world map
+        function pulse() {
+            ctx.clearRect(0,0,500,300);
+            ctx.fillStyle = '#14f195';
+            // Simulated global intercept points
+            const points = [[100,50], [250,120], [400,80], [180,200]];
+            points.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p[0], p[1], Math.random() * 5, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+        setInterval(pulse, 500);
+    </script>
     </body>
     </html>
     
