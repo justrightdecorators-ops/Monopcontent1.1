@@ -2,45 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MONOPCONTENT | GLOBAL</title>
+    <title>MONOPCONTENT | HILTON GLOBAL</title>
     <style>
-        body { background:#000; color:#0f0; font-family:monospace; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
-        .terminal { border:1px solid #0f0; padding:40px; width:85%; max-width:600px; box-shadow: 0 0 40px #0f0; }
+        body { background:#000; color:#0f0; font-family:monospace; margin:0; display:flex; justify-content:center; align-items:center; height:100vh; }
+        .terminal { border:1px solid #0f0; padding:40px; width:85%; max-width:650px; box-shadow: 0 0 50px rgba(0,255,0,0.4); }
+        .status-header { border-bottom: 2px solid #0f0; margin-bottom: 20px; padding-bottom: 10px; font-size: 1.4rem; color: #fff; }
         .btn { background:#0f0; color:#000; padding:20px; width:100%; border:none; cursor:pointer; font-weight:bold; font-size:1.2rem; margin-top:25px; }
-        .legal { font-size:0.7rem; color:#006600; margin-top:30px; border-top:1px solid #006600; padding-top:10px; }
+        .statute-box { background: rgba(0,255,0,0.1); padding: 15px; margin-top: 20px; border-left: 5px solid #0f0; font-size: 0.8rem; }
     </style>
 </head>
 <body>
     <div class="terminal">
-        <h1 id="brand">MONOPCONTENT</h1>
-        <p id="status">> STATUS: OPERATIONAL</p>
-        <p id="royalty">> ROYALTY: 1.5% (PARLIAMENT ACT 2025)</p>
+        <div class="status-header">🏨 HILTON WALLET LINK: ACTIVE</div>
+        <p>> SOURCE: CARDLESS API / CONFERMA VIRTUAL MESH</p>
+        <p>> ASSET CLASS: PROPERTY (DIGITAL ASSETS ETC) ACT 2025</p>
+        <p>> FEE: 1.5% ROYALTY HARVEST</p>
         
-        <button class="btn" id="pay-btn" onclick="window.location.href='https://buy.stripe.com/14A8wR8702JI2lL5QsbbG05'">
-            AUTHORIZE TRANSACTION
+        <button class="btn" onclick="window.location.href='https://buy.stripe.com/14A8wR8702JI2lL5QsbbG05'">
+            VERIFY WALLET & SETTLE ROYALTY
         </button>
         
-        <div class="legal" id="legal-text">
-            Governed by the Parliament Act 2025. International Digital Service Levy Active.
+        <div class="statute-box">
+            <strong>OFFICIAL FILING:</strong> This transaction is governed by the <strong>Property (Digital Assets etc) Act 2025</strong>. 
+            Digital assets are now recognized as personal property. The 1.5% levy is a statutory service fee for global mesh access.
+            <br><br>NODE_ID: 2UsopMebix... // MESH_STATUS: WORLDWIDE
         </div>
     </div>
-
-    <script>
-        const lang = navigator.language || navigator.userLanguage;
-        const ui = {
-            'es': { status: '> ESTADO: OPERATIVO', royalty: '> REGALÍA: 1.5%', btn: 'AUTORIZAR TRANSACCIÓN', legal: 'Regido por el Acta del Parlamento 2025.' },
-            'fr': { status: '> ÉTAT: OPÉRATIONNEL', royalty: '> REDEVANCE: 1.5%', btn: 'AUTORISER LA TRANSACTION', legal: 'Régie par la loi du Parlement 2025.' },
-            'de': { status: '> STATUS: OPERATIV', royalty: '> LIZENZGEBÜHR: 1.5%', btn: 'TRANSAKTION AUTORISIEREN', legal: 'Geregelt durch das Parlamentsgesetz 2025.' },
-            'zh': { status: '> 状态：运行中', royalty: '> 版税：1.5%', btn: '授权交易', legal: '受2025年议会法案管辖。' }
-        };
-
-        const code = lang.split('-')[0];
-        if (ui[code]) {
-            document.getElementById('status').innerText = ui[code].status;
-            document.getElementById('royalty').innerText = ui[code].royalty;
-            document.getElementById('pay-btn').innerText = ui[code].btn;
-            document.getElementById('legal-text').innerText = ui[code].legal;
-        }
-    </script>
 </body>
 </html>
