@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MONOPCONTENT</title>
+    <title>MONOPCONTENT | Institutional Asset Gateway</title>
     <style>
-        body { background: #000000; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
-        .app-terminal { width: 100%; max-width: 400px; padding: 20px; text-align: center; }
+        body { background: #0a0c10; color: #ffffff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .terminal-container { width: 100%; max-width: 420px; padding: 30px; border: 1px solid #1f2328; background: #0d1117; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
         
-        .brand-header { font-size: 2.5rem; font-weight: 900; letter-spacing: -2px; margin-bottom: 5px; color: #fff; }
-        .version-tag { font-family: monospace; color: #58a6ff; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 40px; display: block; }
+        .header { text-align: center; margin-bottom: 35px; }
+        .brand { font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; color: #ffffff; margin: 0; }
+        .sub-header { font-size: 0.7rem; color: #58a6ff; letter-spacing: 3px; text-transform: uppercase; margin-top: 8px; font-family: monospace; }
         
-        .box { background: #111; border: 1px solid #333; border-radius: 12px; padding: 25px; text-align: left; margin-bottom: 30px; }
-        .box-title { color: #888; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 12px; font-weight: bold; letter-spacing: 1px; }
-        .box-text { font-size: 1rem; line-height: 1.6; color: #eee; font-weight: 400; }
+        .info-panel { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin-bottom: 30px; }
+        .label { color: #8b949e; font-size: 0.65rem; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block; }
+        .description { font-size: 0.9rem; line-height: 1.5; color: #d1d5db; }
 
         .execute-btn { 
             background: #238636; 
-            color: white; 
+            color: #ffffff; 
             text-decoration: none; 
             display: block; 
-            padding: 22px; 
-            border-radius: 16px; 
-            font-weight: 800; 
-            font-size: 1.4rem; 
-            box-shadow: 0 10px 20px rgba(35, 134, 54, 0.3);
-            transition: 0.2s ease;
-            cursor: pointer;
-            border: none;
-            width: 100%;
-            box-sizing: border-box;
+            padding: 18px; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 1rem; 
+            text-align: center;
+            transition: background 0.2s;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .execute-btn:hover { background: #2ea043; box-shadow: 0 12px 24px rgba(46, 160, 67, 0.4); }
-        .execute-btn:active { transform: scale(0.97); }
+        .execute-btn:hover { background: #2ea043; }
+        .execute-btn:active { background: #238636; transform: translateY(1px); }
 
-        .footer-data { margin-top: 40px; font-family: monospace; font-size: 0.65rem; color: #444; line-height: 1.8; text-transform: uppercase; }
+        .meta-data { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid #21262d; pt: 20px; padding-top: 20px;}
+        .meta-item { font-size: 0.65rem; color: #484f58; font-family: monospace; }
+        .meta-item span { color: #8b949e; display: block; margin-top: 2px; }
     </style>
 </head>
 <body>
-    <div class="app-terminal">
-        <div class="brand-header">MONOPCONTENT</div>
-        <span class="version-tag">SYSTEM_V1.1_ACTIVE</span>
+    <div class="terminal-container">
+        <div class="header">
+            <h1 class="brand">MONOPCONTENT</h1>
+            <div class="sub-header">Global Asset Operations</div>
+        </div>
         
-        <div class="box">
-            <div class="box-title">Direct Access Protocol</div>
-            <div class="box-text">
-                This gateway facilitates immediate asset settlement via the MONOPCONTENT 1.1 mainnet. By proceeding, you authorize the 1% platform fee for priority processing and direct-to-vault routing.
+        <div class="info-panel">
+            <span class="label">Operational Disclosure</span>
+            <div class="description">
+                Secure gateway for high-priority asset settlement and liquidity provision. By initiating the protocol, the user authorizes a 1.0% administrative fee for immediate processing and secure capital routing.
             </div>
         </div>
 
-        <a href="https://buy.stripe.com/14A00lfzsbgef8x5QsbbG02" class="execute-btn">EXECUTE SETTLEMENT</a>
+        <a href="https://buy.stripe.com/14A00lfzsbgef8x5QsbbG02" class="execute-btn">Execute Settlement</a>
         
-        <div class="footer-data">
-            GATEWAY: MPC_CORE_SECURE<br>
-            DESCRIPTOR: MONOPCONTENT<br>
-            ENCRYPTION: AES-256_LIVE
+        <div class="meta-data">
+            <div class="meta-item">Protocol ID<span>MPC-SYS-1.1</span></div>
+            <div class="meta-item">Encryption<span>AES-256-GCM</span></div>
+            <div class="meta-item">Gateway Status<span>Active / Secure</span></div>
+            <div class="meta-item">Network<span>Stripe Mainnet</span></div>
         </div>
     </div>
 </body>
