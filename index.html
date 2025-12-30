@@ -7,28 +7,23 @@
     <title>MONOPCONTENT</title>
     <style>
         body { background: #000; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .portal { text-align: center; border: 1px solid #222; padding: 50px; border-radius: 20px; background: #050505; width: 350px; }
-        h1 { font-size: 1.2rem; letter-spacing: 5px; color: #fff; margin-bottom: 40px; }
-        .status { color: #238636; font-family: monospace; font-size: 0.7rem; margin-bottom: 40px; }
-        .legal { color: #666; font-size: 0.75rem; line-height: 1.6; margin-bottom: 40px; text-align: left; border-top: 1px solid #222; padding-top: 20px; }
+        .portal { text-align: center; border: 1px solid #111; padding: 60px 20px; border-radius: 0px; background: #000; width: 100%; max-width: 400px; }
+        h1 { font-size: 1.5rem; letter-spacing: 8px; color: #fff; margin-bottom: 20px; font-weight: 900; }
+        .status { color: #238636; font-family: monospace; font-size: 0.7rem; margin-bottom: 60px; letter-spacing: 2px; }
         .btn { 
-            background: #238636; color: white; text-decoration: none; display: block; padding: 20px; 
-            border-radius: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+            background: #238636; color: white; text-decoration: none; display: block; padding: 25px; 
+            border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem;
+            transition: 0.3s;
         }
+        .btn:active { background: #fff; color: #000; }
     </style>
 </head>
 <body>
     <div class="portal">
         <h1>MONOPCONTENT</h1>
-        <div class="status">● SYSTEM ACTIVE</div>
+        <div class="status">● CONNECTION ENCRYPTED</div>
         
-        <div class="legal">
-            Asset Settlement Protocol v1.3. 
-            Authorized use only. 
-            Standard 1.0% administrative settlement fee applies.
-        </div>
-
-        <a href="https://buy.stripe.com/14A00lfzsbgef8x5QsbbG02?ref=1767055143" class="btn">Execute</a>
+        <a href="#" class="btn" onclick="alert('Access Granted. Initializing Secure Protocol...');">ENTER SYSTEM</a>
     </div>
 </body>
 </html>
