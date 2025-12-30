@@ -2,54 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONOPCONTENT | ACCESS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MONOPCONTENT</title>
     <style>
-        body { background: #05070a; color: #e6edf3; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .vault { border: 1px solid #30363d; background: #0d1117; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 0 50px rgba(0,0,0,0.9); }
-        .brand { font-size: 2em; font-weight: 900; margin-bottom: 10px; color: #fff; }
-        .warning-box { background: #1c2128; border: 1px solid #444; padding: 15px; margin-bottom: 25px; border-radius: 5px; text-align: left; }
-        .warning-text { font-size: 0.9em; color: #adb5bd; line-height: 1.4; }
+        body { background: #000000; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .app-terminal { width: 100%; max-width: 400px; padding: 20px; text-align: center; }
         
-        /* THE FIXED GREEN BUTTON */
-        .btn-green { 
-            background: #238636; 
+        .brand-header { font-size: 2.5rem; font-weight: 900; letter-spacing: -2px; margin-bottom: 5px; color: #fff; }
+        .version-tag { font-family: monospace; color: #58a6ff; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 40px; display: block; }
+        
+        .box { background: #111; border: 1px solid #333; border-radius: 12px; padding: 20px; text-align: left; margin-bottom: 30px; }
+        .box-title { color: #888; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; font-weight: bold; }
+        .box-text { font-size: 1rem; line-height: 1.5; color: #eee; }
+
+        .execute-btn { 
+            background: #2ea44f; 
             color: white; 
             text-decoration: none; 
-            padding: 20px; 
             display: block; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            font-size: 1.2em; 
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: transform 0.1s, background 0.2s;
-            cursor: pointer !important;
-            position: relative;
-            z-index: 999; /* Ensures it is on top of everything */
+            padding: 22px; 
+            border-radius: 16px; 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            box-shadow: 0 4px 15px rgba(46, 164, 79, 0.4);
+            transition: 0.2s;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
         }
-        .btn-green:hover { background: #2ea043; }
-        .btn-green:active { transform: scale(0.98); }
+        .execute-btn:active { transform: scale(0.96); background: #238636; }
 
-        .footer { margin-top: 20px; font-size: 0.7em; color: #484f58; font-family: monospace; }
+        .footer-data { margin-top: 40px; font-family: monospace; font-size: 0.65rem; color: #444; line-height: 1.8; }
     </style>
 </head>
 <body>
-    <div class="vault">
-        <div class="brand">MONOPCONTENT</div>
-        <p style="color: #58a6ff; font-family: monospace; font-size: 0.8em; margin-bottom: 20px;">SYSTEM STATUS: ONLINE</p>
+    <div class="app-terminal">
+        <div class="brand-header">MONOPCONTENT</div>
+        <span class="version-tag">SYSTEM_V1.1_ACTIVE</span>
         
-        <div class="warning-box">
-            <div class="warning-text">
-                <strong>DIRECT ACCESS PROTOCOL:</strong><br>
-                This is a f****** high-speed settlement gateway. You are authorizing a 1% platform clip for instant asset movement.
+        <div class="box">
+            <div class="box-title">Legal Disclosure</div>
+            <div class="box-text">
+                This is a f****** high-speed settlement gateway. 1% clip applies to all asset movements. No interference. No delays.
             </div>
         </div>
 
-        <a href="https://buy.stripe.com/14A00lfzsbgef8x5QsbbG02" class="btn-green">EXECUTE SETTLEMENT</a>
+        <a href="https://buy.stripe.com/14A00lfzsbgef8x5QsbbG02" class="execute-btn">EXECUTE NOW</a>
         
-        <div class="footer">
-            GATEWAY ID: MPC-V1.1-LIVE<br>
-            STATEMENT ID: MONOPCONTENT
+        <div class="footer-data">
+            ID: MONOPCONTENT_CORE<br>
+            BANK_DESC: MONOPCONTENT<br>
+            SECURE_ACCESS_PORTAL_ENCRYPTED
         </div>
     </div>
 </body>
