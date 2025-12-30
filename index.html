@@ -2,21 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="MONOPCONTENT GLOBAL REVENUE MESH">
-    <meta name="author" content="MONOPCONTENT">
-    <title>MONOPCONTENT</title>
+    <title>MONOPCONTENT | GLOBAL</title>
     <style>
         body { background:#000; color:#0f0; font-family:monospace; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
-        .terminal { border:1px solid #0f0; padding:40px; width:90%; max-width:400px; box-shadow: 0 0 20px #0f0; }
-        .btn { background:#0f0; color:#000; padding:15px; width:100%; border:none; cursor:pointer; font-weight:bold; margin-top:20px; width:100%; }
+        .terminal { border:1px solid #0f0; padding:40px; width:85%; max-width:600px; box-shadow: 0 0 40px #0f0; }
+        .btn { background:#0f0; color:#000; padding:20px; width:100%; border:none; cursor:pointer; font-weight:bold; font-size:1.2rem; margin-top:25px; }
+        .legal { font-size:0.7rem; color:#006600; margin-top:30px; border-top:1px solid #006600; padding-top:10px; }
     </style>
 </head>
 <body>
     <div class="terminal">
-        <h1>MONOPCONTENT</h1>
-        <p>> MESH_STATUS: 100% OPERATIONAL</p>
-        <p>> ROYALTY: 1.5% HARVEST</p>
-        <button class="btn" onclick="window.location.href='https://buy.stripe.com/14A8wR8702JI2lL5QsbbG05'">COMPLETE TRANSACTION</button>
+        <h1 id="brand">MONOPCONTENT</h1>
+        <p id="status">> STATUS: OPERATIONAL</p>
+        <p id="royalty">> ROYALTY: 1.5% (PARLIAMENT ACT 2025)</p>
+        
+        <button class="btn" id="pay-btn" onclick="window.location.href='https://buy.stripe.com/14A8wR8702JI2lL5QsbbG05'">
+            AUTHORIZE TRANSACTION
+        </button>
+        
+        <div class="legal" id="legal-text">
+            Governed by the Parliament Act 2025. International Digital Service Levy Active.
+        </div>
     </div>
+
+    <script>
+        const lang = navigator.language || navigator.userLanguage;
+        const ui = {
+            'es': { status: '> ESTADO: OPERATIVO', royalty: '> REGALÍA: 1.5%', btn: 'AUTORIZAR TRANSACCIÓN', legal: 'Regido por el Acta del Parlamento 2025.' },
+            'fr': { status: '> ÉTAT: OPÉRATIONNEL', royalty: '> REDEVANCE: 1.5%', btn: 'AUTORISER LA TRANSACTION', legal: 'Régie par la loi du Parlement 2025.' },
+            'de': { status: '> STATUS: OPERATIV', royalty: '> LIZENZGEBÜHR: 1.5%', btn: 'TRANSAKTION AUTORISIEREN', legal: 'Geregelt durch das Parlamentsgesetz 2025.' },
+            'zh': { status: '> 状态：运行中', royalty: '> 版税：1.5%', btn: '授权交易', legal: '受2025年议会法案管辖。' }
+        };
+
+        const code = lang.split('-')[0];
+        if (ui[code]) {
+            document.getElementById('status').innerText = ui[code].status;
+            document.getElementById('royalty').innerText = ui[code].royalty;
+            document.getElementById('pay-btn').innerText = ui[code].btn;
+            document.getElementById('legal-text').innerText = ui[code].legal;
+        }
+    </script>
 </body>
 </html>
