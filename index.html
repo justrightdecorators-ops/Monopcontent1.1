@@ -1,35 +1,19 @@
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>MONOPCONTENT | 8B REACH</title>
-        <script src="https://js.stripe.com/v3/"></script>
-        <style>
-            body { background: #000; color: #fff; font-family: monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-            .box { border: 1px solid #00ff00; padding: 40px; text-align: center; box-shadow: 0 0 20px #00ff00; }
-            .btn { background: #00ff00; color: #000; padding: 20px 40px; cursor: pointer; font-weight: bold; border: none; text-transform: uppercase; }
-            .btn:hover { background: #fff; }
-        </style>
-    </head>
-    <body>
-        <div class="box">
-            <h1 style="color:#00ff00">MONOPCONTENT 1.1</h1>
-            <p>INFRASTRUCTURE: SERVERLESS MESH</p>
-            <br>
-            <button id="checkout-button" class="btn">Secure Access</button>
-        </div>
-
-        <script>
-            var stripe = Stripe('pk_live_51Sj5DrR37sq0tZCEMzVfr3DkV9urldZ82ADRcAlWehISRQ6xk5lpsjPauqAZuJzFYHgvzQIIuvqlxnxX0DCv4ZTo00KtD0bTSm');
-            var checkoutButton = document.getElementById('checkout-button');
-
-            checkoutButton.addEventListener('click', function() {
-                console.log("Handshaking with Stripe...");
-                // This connects the user to your payment node
-                // Note: In a live environment, you'd redirect to a Stripe Checkout URL here
-                alert("Redirecting to Secure Payment Node...");
-            });
-        </script>
-    </body>
-    </html>
-    
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body { background:#000; color:#0f0; font-family:monospace; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
+                .terminal { border:1px solid #0f0; padding:20px; text-align:center; width:80%; }
+                .btn { background:#0f0; color:#000; padding:15px; width:100%; border:none; cursor:pointer; font-weight:bold; }
+            </style>
+        </head>
+        <body>
+            <div class="terminal">
+                <p>> NODE_STATUS: ARMED</p>
+                <button class="btn" onclick="window.location.href='https://buy.stripe.com/14A8wR8702JI2lL5QsbbG05'">SECURE ACCESS</button>
+            </div>
+        </body>
+        </html>
+        
