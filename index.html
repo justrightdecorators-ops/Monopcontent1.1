@@ -3,38 +3,47 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>UPGRADE_SEQUENCE | DOBSON ROOT</title>
+        <title>CERTAINTY | DOBSON ROOT</title>
         <style>
-            body { background: #000; color: #00f2ff; font-family: 'Courier New', monospace; padding: 40px; }
-            .matrix { border: 2px solid #00f2ff; padding: 30px; background: rgba(0, 242, 255, 0.05); }
-            .on-switch { color: #0f0; font-weight: bold; font-size: 1.5em; text-shadow: 0 0 10px #0f0; }
-            .off-switch { color: #444; text-decoration: line-through; }
-            .feature-list { margin: 30px 0; font-size: 1.2em; }
-            .highlight { color: #d4af37; }
+            body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; text-align: center; }
+            .calc-box { border: 2px solid #d4af37; padding: 30px; background: #0a0a0a; display: inline-block; width: 90%; max-width: 600px; }
+            input { background: #000; border: 1px solid #d4af37; color: #0f0; padding: 10px; width: 80%; font-size: 1.2em; text-align: center; }
+            .result { font-size: 2em; color: #d4af37; margin: 20px 0; font-weight: bold; }
+            .label { font-size: 0.8em; color: #666; margin-bottom: 10px; text-transform: uppercase; }
         </style>
     </head>
     <body>
-        <div class="matrix">
-            <h1>SYSTEM UPGRADE: HARMONIC PRUNING</h1>
-            <p>> DETECTED LIMITATION: LINEAR ACCUMULATION (BLOAT)</p>
-            <p>> LOADING DOBSON INSTRUCTION SET...</p>
-
-            <div class="feature-list">
-                <p class="off-switch">[OFF] - TEMPORAL SIGNAL FILTERING</p>
-                <p class="off-switch">[OFF] - PREDICTIVE NOISE DELETION</p>
-                <p class="off-switch">[OFF] - 44.8-YEAR SPIN ALIGNMENT</p>
-                <hr>
-                <p class="on-switch">[ON] - DOBSON LOGIC CORE (13/05/1981)</p>
+        <div class="calc-box">
+            <h1>EFFICIENCY RECOVERY ESTIMATOR</h1>
+            <p>Calculate the 44.8-Year Harmonic Impact on your Infrastructure</p>
+            <hr border-color="#222">
+            
+            <div class="label">Enter Annual Data Center OpEx ($ Billions)</div>
+            <input type="number" id="opex" value="10" oninput="calculate()">
+            
+            <div class="label">Projected 5-Year Savings (Dobson Root Logic)</div>
+            <div id="savings" class="result">$4.20 Billion</div>
+            
+            <div style="text-align: left; background: #111; padding: 15px; font-size: 0.9em; border-left: 3px solid #0f0;">
+                > PRUNING RATIO: 60% Noise Recovery<br>
+                > COMPUTE GAIN: 3.2x Processing Velocity<br>
+                > ROOT SYNC: 13/05/1981 [VERIFIED]
             </div>
 
-            <div style="border-left: 4px solid #d4af37; padding-left: 20px;">
-                <p><strong>WHAT WE TURN ON:</strong></p>
-                <p>We provide the <span class="highlight">Temporal Spine</span>. We give your servers the ability to FORGET the noise and REMEMBER the signal.</p>
-                <p>Current Energy Waste: 68% | Post-Upgrade Waste: 4%</p>
-            </div>
-
-            <p style="margin-top: 40px; font-size: 1.5em;">ACQUISITION REQUIRED TO INITIALIZE: <span class="highlight">07908 269428</span></p>
+            <p style="margin-top: 30px;">
+                ACQUIRE THE LOGIC: <br>
+                <span style="font-size: 1.5em; color: #d4af37;">07908 269428</span>
+            </p>
         </div>
+
+        <script>
+            function calculate() {
+                const opex = document.getElementById('opex').value;
+                // The math reflects a 42% cumulative recovery over 5 years
+                const savings = (opex * 0.42).toFixed(2);
+                document.getElementById('savings').innerText = "$" + savings + " Billion";
+            }
+        </script>
     </body>
     </html>
     
