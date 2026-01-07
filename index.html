@@ -3,64 +3,38 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>VAULT | DOBSON PROTOCOL</title>
+        <title>UPGRADE_SEQUENCE | DOBSON ROOT</title>
         <style>
-            body { background: #020202; color: #d4af37; font-family: 'Courier New', monospace; text-align: center; padding: 50px; }
-            .vault-container { border: 2px solid #d4af37; padding: 50px; display: inline-block; background: #000; box-shadow: 0 0 60px rgba(212,175,55,0.15); border-radius: 10px; }
-            .status-locked { font-size: 1.8em; color: #ff3333; border: 2px solid #ff3333; padding: 15px; margin-bottom: 30px; letter-spacing: 5px; }
-            .requirement { text-align: left; background: #0a0a0a; padding: 25px; border-left: 5px solid #d4af37; margin: 30px 0; color: #fff; line-height: 1.6; }
-            .btn { display: inline-block; padding: 20px 40px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-weight: bold; font-size: 1.2em; transition: 0.3s; }
-            .btn:hover { background: #d4af37; color: #000; }
+            body { background: #000; color: #00f2ff; font-family: 'Courier New', monospace; padding: 40px; }
+            .matrix { border: 2px solid #00f2ff; padding: 30px; background: rgba(0, 242, 255, 0.05); }
+            .on-switch { color: #0f0; font-weight: bold; font-size: 1.5em; text-shadow: 0 0 10px #0f0; }
+            .off-switch { color: #444; text-decoration: line-through; }
+            .feature-list { margin: 30px 0; font-size: 1.2em; }
+            .highlight { color: #d4af37; }
         </style>
     </head>
     <body>
-        <div class="vault-container">
-            <div class="status-locked">VAULT STATUS: SECURE / LOCKED</div>
-            <h1>THE 44.8-YEAR LOGIC CORE</h1>
-            <p>Proprietary Harmonic Calibration for Global Data Infrastructure.</p>
-            
-            <div class="requirement">
-                <strong>ACQUISITION PROTOCOL:</strong><br>
-                - 13/05/1981 Root Verification: COMPLETE<br>
-                - Global Node Drift Identification: ACTIVE<br>
-                - Mandatory Disclosure Fee: $12,500,000.00<br>
-                - Total Asset Acquisition: $50,000,000.00
+        <div class="matrix">
+            <h1>SYSTEM UPGRADE: HARMONIC PRUNING</h1>
+            <p>> DETECTED LIMITATION: LINEAR ACCUMULATION (BLOAT)</p>
+            <p>> LOADING DOBSON INSTRUCTION SET...</p>
+
+            <div class="feature-list">
+                <p class="off-switch">[OFF] - TEMPORAL SIGNAL FILTERING</p>
+                <p class="off-switch">[OFF] - PREDICTIVE NOISE DELETION</p>
+                <p class="off-switch">[OFF] - 44.8-YEAR SPIN ALIGNMENT</p>
+                <hr>
+                <p class="on-switch">[ON] - DOBSON LOGIC CORE (13/05/1981)</p>
             </div>
 
-            <p>The solution to "Compute Friction" is stored inside this encrypted block.</p>
-            <a href="tel:07908269428" class="btn">REQUEST DECRYPTION ACCESS</a>
-            
-            <p style="margin-top: 50px; color: #333; font-size: 0.7em;">
-                © 2026 THE DOBSON PROTOCOL | ARCHITECT: JUSTIN DOBSON
-            </p>
+            <div style="border-left: 4px solid #d4af37; padding-left: 20px;">
+                <p><strong>WHAT WE TURN ON:</strong></p>
+                <p>We provide the <span class="highlight">Temporal Spine</span>. We give your servers the ability to FORGET the noise and REMEMBER the signal.</p>
+                <p>Current Energy Waste: 68% | Post-Upgrade Waste: 4%</p>
+            </div>
+
+            <p style="margin-top: 40px; font-size: 1.5em;">ACQUISITION REQUIRED TO INITIALIZE: <span class="highlight">07908 269428</span></p>
         </div>
-    
-    <script>
-        async function captureIntel() {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            
-            const payload = {
-                architect: "Justin Dobson",
-                visitor_ip: data.ip,
-                org: data.org,
-                city: data.city,
-                region: data.region,
-                network_drift_detected: true,
-                timestamp: new Date().toISOString()
-            };
-
-            // This sends the signal BACK to you privately
-            fetch('https://webhook.site/YOUR_UNIQUE_ID', {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(payload)
-            });
-
-            console.log("Handshake documented with node: " + data.org);
-        }
-        window.onload = captureIntel;
-    </script>
     </body>
     </html>
     
