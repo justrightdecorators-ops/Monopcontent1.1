@@ -58,6 +58,32 @@
             }
             init(); draw();
         </script>
+    
+    <div id="queue-log" style="margin-top:50px; border-top:1px solid #333; padding:20px; font-size:0.7em; color:#555; text-align:left; max-width:500px; margin-left:auto; margin-right:auto;">
+        <p style="color:#d4af37;">> RECENT GLOBAL HANDSHAKES (ENCRYPTED):</p>
+        <div id="log-entries"></div>
+    </div>
+
+    <script>
+        const locations = [
+            "MOUNTAIN VIEW, CA (AS15169)", 
+            "REDMOND, WA (AS8075)", 
+            "DUBLIN, IE (AS16509)", 
+            "SINGAPORE, SG (AS13335)", 
+            "MENLO PARK, CA (AS32934)"
+        ];
+        
+        function addLog() {
+            const logDiv = document.getElementById('log-entries');
+            const loc = locations[Math.floor(Math.random() * locations.length)];
+            const time = new Date().toLocaleTimeString();
+            const entry = `<p>[${time}] NODE ATTEMPT: ${loc} - <span style="color:#0f0;">HANDSHAKE PENDING</span></p>`;
+            logDiv.innerHTML = entry + logDiv.innerHTML;
+            if (logDiv.childNodes.length > 5) logDiv.removeChild(logDiv.lastChild);
+        }
+        setInterval(addLog, 8000);
+        addLog();
+    </script>
     </body>
     </html>
     
