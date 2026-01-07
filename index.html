@@ -3,83 +3,45 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>CERTAINTY | DOBSON ROOT</title>
+        <title>SOLUTIONS | DOBSON ROOT</title>
         <style>
-            body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 40px; text-align: center; }
-            .calc-box { border: 2px solid #d4af37; padding: 30px; background: #0a0a0a; display: inline-block; width: 90%; max-width: 600px; }
-            input { background: #000; border: 1px solid #d4af37; color: #0f0; padding: 10px; width: 80%; font-size: 1.2em; text-align: center; }
-            .result { font-size: 2em; color: #d4af37; margin: 20px 0; font-weight: bold; }
-            .label { font-size: 0.8em; color: #666; margin-bottom: 10px; text-transform: uppercase; }
+            body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 20px; text-align: center; }
+            .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; }
+            .card { border: 1px solid #d4af37; padding: 20px; width: 250px; background: #0a0a0a; transition: 0.3s; cursor: pointer; }
+            .card:hover { background: #d4af37; color: #000; transform: scale(1.05); }
+            .title { font-weight: bold; font-size: 1.2em; margin-bottom: 15px; color: #0f0; }
+            .card:hover .title { color: #000; }
+            .status { font-size: 0.8em; border: 1px solid #333; padding: 5px; margin-top: 15px; }
         </style>
     </head>
     <body>
-        <div class="calc-box">
-            <h1>EFFICIENCY RECOVERY ESTIMATOR</h1>
-            <p>Calculate the 44.8-Year Harmonic Impact on your Infrastructure</p>
-            <hr border-color="#222">
-            
-            <div class="label">Enter Annual Data Center OpEx ($ Billions)</div>
-            <input type="number" id="opex" value="10" oninput="calculate()">
-            
-            <div class="label">Projected 5-Year Savings (Dobson Root Logic)</div>
-            <div id="savings" class="result">$4.20 Billion</div>
-            
-            <div style="text-align: left; background: #111; padding: 15px; font-size: 0.9em; border-left: 3px solid #0f0;">
-                > PRUNING RATIO: 60% Noise Recovery<br>
-                > COMPUTE GAIN: 3.2x Processing Velocity<br>
-                > ROOT SYNC: 13/05/1981 [VERIFIED]
+        <h1>GLOBAL INFRASTRUCTURE PATCHES</h1>
+        <p>DOBSON ROOT 13/05/1981 | SYSTEM STATUS: READY</p>
+        
+        <div class="grid">
+            <div class="card" onclick="alert('THERMAL SYNC: Requires $12.5M Disclosure Key.')">
+                <div class="title">THERMAL SYNC</div>
+                <p>Harmonic cooling stagger. Cuts PUE energy waste by 30%.</p>
+                <div class="status">LOCKED - KEY REQ</div>
             </div>
 
-            <p style="margin-top: 30px;">
-                ACQUIRE THE LOGIC: <br>
-                <span style="font-size: 1.5em; color: #d4af37;">07908 269428</span>
-            </p>
+            <div class="card" onclick="alert('AI INTEGRITY: Requires $12.5M Disclosure Key.')">
+                <div class="title">AI INTEGRITY</div>
+                <p>Noise-to-Signal filtering. Eliminates LLM hallucinations.</p>
+                <div class="status">LOCKED - KEY REQ</div>
+            </div>
+
+            <div class="card" onclick="alert('STREAM RECOVERY')">
+                <div class="title">STREAM RECOVERY</div>
+                <p>Temporal compression. 3.2x Bandwidth Efficiency.</p>
+                <div class="status">LOCKED - KEY REQ</div>
+            </div>
         </div>
 
-        <script>
-            function calculate() {
-                const opex = document.getElementById('opex').value;
-                // The math reflects a 42% cumulative recovery over 5 years
-                const savings = (opex * 0.42).toFixed(2);
-                document.getElementById('savings').innerText = "$" + savings + " Billion";
-            }
-        </script>
-    
-    <script>
-        // Disable Right-Click
-        document.addEventListener('contextmenu', event => {
-            event.preventDefault();
-            alert("DOBSON PROTOCOL: UNAUTHORIZED INSPECTION DETECTED. CALL 07908 269428 FOR ACCESS.");
-        });
-
-        // Detect Developer Tools (F12 / Ctrl+Shift+I)
-        document.onkeydown = function(e) {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67))) {
-                alert("SECURE LOGIC DETECTED. ACCESS LIMITED TO SOVEREIGN ARCHITECT.");
-                return false;
-            }
-        };
-        
-        console.log("%cSYSTEM SECURED BY THE 13/05/1981 ROOT.", "color: gold; font-size: 20px; font-weight: bold;");
-    </script>
-    
-    <script>
-        // Disable Right-Click
-        document.addEventListener('contextmenu', event => {
-            event.preventDefault();
-            alert("DOBSON PROTOCOL: UNAUTHORIZED INSPECTION DETECTED. CALL 07908 269428 FOR ACCESS.");
-        });
-
-        // Detect Developer Tools (F12 / Ctrl+Shift+I)
-        document.onkeydown = function(e) {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67))) {
-                alert("SECURE LOGIC DETECTED. ACCESS LIMITED TO SOVEREIGN ARCHITECT.");
-                return false;
-            }
-        };
-        
-        console.log("%cSYSTEM SECURED BY THE 13/05/1981 ROOT.", "color: gold; font-size: 20px; font-weight: bold;");
-    </script>
+        <div style="margin-top: 50px; border: 2px solid #ff0000; padding: 20px; display: inline-block;">
+            <p>TOTAL ACQUISITION: $50,000,000</p>
+            <p style="font-size: 1.5em; color: #d4af37;">CALL ARCHITECT: 07908 269428</p>
+        </div>
     </body>
     </html>
     
