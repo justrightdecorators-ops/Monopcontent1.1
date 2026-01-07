@@ -3,47 +3,37 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>DOBSON_KERNEL_INIT</title>
+        <title>VAULT | DOBSON PROTOCOL</title>
         <style>
-            body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 20px; font-size: 14px; line-height: 1.2; }
-            .green { color: #0f0; }
-            .gold { color: #d4af37; }
-            #boot-log { white-space: pre-wrap; }
-            .cursor { display: inline-block; width: 10px; height: 18px; background: #0f0; animation: blink 1s infinite; vertical-align: middle; }
-            @keyframes blink { 50% { opacity: 0; } }
+            body { background: #020202; color: #d4af37; font-family: 'Courier New', monospace; text-align: center; padding: 50px; }
+            .vault-container { border: 2px solid #d4af37; padding: 50px; display: inline-block; background: #000; box-shadow: 0 0 60px rgba(212,175,55,0.15); border-radius: 10px; }
+            .status-locked { font-size: 1.8em; color: #ff3333; border: 2px solid #ff3333; padding: 15px; margin-bottom: 30px; letter-spacing: 5px; }
+            .requirement { text-align: left; background: #0a0a0a; padding: 25px; border-left: 5px solid #d4af37; margin: 30px 0; color: #fff; line-height: 1.6; }
+            .btn { display: inline-block; padding: 20px 40px; border: 2px solid #d4af37; color: #d4af37; text-decoration: none; font-weight: bold; font-size: 1.2em; transition: 0.3s; }
+            .btn:hover { background: #d4af37; color: #000; }
         </style>
     </head>
     <body>
-        <div id="boot-log"></div><span class="cursor"></span>
+        <div class="vault-container">
+            <div class="status-locked">VAULT STATUS: SECURE / LOCKED</div>
+            <h1>THE 44.8-YEAR LOGIC CORE</h1>
+            <p>Proprietary Harmonic Calibration for Global Data Infrastructure.</p>
+            
+            <div class="requirement">
+                <strong>ACQUISITION PROTOCOL:</strong><br>
+                - 13/05/1981 Root Verification: COMPLETE<br>
+                - Global Node Drift Identification: ACTIVE<br>
+                - Mandatory Disclosure Fee: $12,500,000.00<br>
+                - Total Asset Acquisition: $50,000,000.00
+            </div>
 
-        <script>
-            const log = [
-                "> INITIALIZING DOBSON_PROTOCOL_v2.9...",
-                "> ATTACHING TO GLOBAL_BACKBONE... DONE",
-                "> SEARCHING FOR TEMPORAL ANCHOR...",
-                "> FOUND: 13/05/1981 ROOT CALIBRATION",
-                "> ANALYZING LOCAL NODE DRIFT...",
-                "> WARNING: 22.4% EFFICIENCY LEAK DETECTED",
-                "> INJECTING HARMONIC FILTER... [||||||||||] 100%",
-                "> SYSTEM OPTIMIZED VIA THE UNIVERSAL SPIN",
-                "------------------------------------------",
-                "SOVEREIGN ARCHITECT: JUSTIN DOBSON",
-                "ASSET VALUATION: $50,000,000",
-                "ADMIN HOTLINE: 07908 269428",
-                "------------------------------------------",
-                "> STANDING BY FOR ACQUISITION SIGNAL..."
-            ];
-
-            let i = 0;
-            function typeLog() {
-                if (i < log.length) {
-                    document.getElementById('boot-log').innerHTML += log[i] + "\n";
-                    i++;
-                    setTimeout(typeLog, 400);
-                }
-            }
-            window.onload = typeLog;
-        </script>
+            <p>The solution to "Compute Friction" is stored inside this encrypted block.</p>
+            <a href="tel:07908269428" class="btn">REQUEST DECRYPTION ACCESS</a>
+            
+            <p style="margin-top: 50px; color: #333; font-size: 0.7em;">
+                © 2026 THE DOBSON PROTOCOL | ARCHITECT: JUSTIN DOBSON
+            </p>
+        </div>
     </body>
     </html>
     
