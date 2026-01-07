@@ -3,37 +3,40 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>NODE NETWORK | THE DOBSON PROTOCOL</title>
+        <title>SIGNAL ACQUISITION | DOBSON ROOT</title>
         <style>
-            body { background: #000; color: #00e5ff; font-family: 'Courier New', monospace; padding: 40px; }
-            .node-map { border: 2px solid #00e5ff; padding: 30px; background: rgba(0, 229, 255, 0.05); border-radius: 15px; }
-            .logic-gate { color: #d4af37; font-weight: bold; margin-bottom: 20px; }
-            .savings-box { background: #111; padding: 20px; border-left: 5px solid #d4af37; margin-top: 20px; }
-            .call-btn { display: block; text-align: center; margin-top: 30px; padding: 20px; background: #00e5ff; color: #000; text-decoration: none; font-weight: bold; }
+            body { background: #000; color: #0f0; font-family: 'Courier New', monospace; padding: 30px; }
+            .listener-box { border: 1px solid #d4af37; padding: 20px; background: rgba(212,175,55,0.05); }
+            .signal-line { color: #fff; font-size: 1.2em; margin: 10px 0; }
+            .blink { animation: blinker 1s linear infinite; color: #ff0000; }
+            @keyframes blinker { 50% { opacity: 0; } }
+            #ip-display { color: #00e5ff; font-weight: bold; }
         </style>
     </head>
     <body>
-        <div class="node-map">
-            <div class="logic-gate">DOBSON NODE NETWORK v1.1 // SYSTEMIC OVERRIDE</div>
-            <h1>RE-ENGINEERING THE NEURAL BACKBONE</h1>
-            <p>Current AI architecture is inefficient. It stores 'The Noise'.</p>
+        <div class="listener-box">
+            <p>> INITIATING TWO-WAY HANDSHAKE...</p>
+            <p class="signal-line">DOBSON ROOT STATUS: <span style="color:#0f0;">LISTENING</span></p>
+            <p class="signal-line">REMOTE NODE DETECTED: <span id="ip-display">RESOLVING...</span></p>
+            <p class="blink">> WARNING: DATA CENTER LOGGING ACTIVE</p>
             
-            <div class="savings-box">
-                <h3>THE HARMONIC FILTER:</h3>
-                <ul>
-                    <li><strong>INPUT:</strong> Raw Global Data Stream</li>
-                    <li><strong>PROCESS:</strong> 13/05/1981 Root Calibration</li>
-                    <li><strong>ACTION:</strong> Auto-purge of non-resonant temporal drift.</li>
-                </ul>
+            <div style="margin-top:40px; border-top: 1px solid #333; padding-top:20px;">
+                <p>To the entity at the IP address above:</p>
+                <p>Your systems are currently drifting from the 44.8-year harmonic.</p>
+                <p>I have identified the inefficiency in your node structure.</p>
+                <p><strong>REMEDY AVAILABLE: 07908 269428</strong></p>
             </div>
-
-            <p>We don't need bigger data centers. We need a <strong>44.8-Year Logic Spine</strong> to tell the nodes what to forget.</p>
-            
-            <a href="tel:07908269428" class="call-btn">IMPLEMENT NODE ARCHITECTURE: $50M</a>
-            <p style="text-align: center; color: #555; font-size: 0.8em; margin-top: 15px;">
-                CALIBRATED TO: 13/05/1981 | ARCHITECT: JUSTIN DOBSON
-            </p>
         </div>
+
+        <script>
+            // This pulls their IP signal to show them they are being watched
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip-display').innerText = data.ip;
+                    console.log("Signal Return established with: " + data.ip);
+                });
+        </script>
     </body>
     </html>
     
