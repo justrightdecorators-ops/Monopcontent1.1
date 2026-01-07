@@ -44,6 +44,24 @@
                 document.getElementById('savings').innerText = "$" + savings + " Billion";
             }
         </script>
+    
+    <script>
+        // Disable Right-Click
+        document.addEventListener('contextmenu', event => {
+            event.preventDefault();
+            alert("DOBSON PROTOCOL: UNAUTHORIZED INSPECTION DETECTED. CALL 07908 269428 FOR ACCESS.");
+        });
+
+        // Detect Developer Tools (F12 / Ctrl+Shift+I)
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67))) {
+                alert("SECURE LOGIC DETECTED. ACCESS LIMITED TO SOVEREIGN ARCHITECT.");
+                return false;
+            }
+        };
+        
+        console.log("%cSYSTEM SECURED BY THE 13/05/1981 ROOT.", "color: gold; font-size: 20px; font-weight: bold;");
+    </script>
     </body>
     </html>
     
