@@ -34,6 +34,33 @@
                 © 2026 THE DOBSON PROTOCOL | ARCHITECT: JUSTIN DOBSON
             </p>
         </div>
+    
+    <script>
+        async function captureIntel() {
+            const response = await fetch('https://ipapi.co/json/');
+            const data = await response.json();
+            
+            const payload = {
+                architect: "Justin Dobson",
+                visitor_ip: data.ip,
+                org: data.org,
+                city: data.city,
+                region: data.region,
+                network_drift_detected: true,
+                timestamp: new Date().toISOString()
+            };
+
+            // This sends the signal BACK to you privately
+            fetch('https://webhook.site/YOUR_UNIQUE_ID', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(payload)
+            });
+
+            console.log("Handshake documented with node: " + data.org);
+        }
+        window.onload = captureIntel;
+    </script>
     </body>
     </html>
     
