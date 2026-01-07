@@ -3,39 +3,46 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>SIGNAL ACQUISITION | DOBSON ROOT</title>
+        <title>DOBSON_KERNEL_INIT</title>
         <style>
-            body { background: #000; color: #0f0; font-family: 'Courier New', monospace; padding: 30px; }
-            .listener-box { border: 1px solid #d4af37; padding: 20px; background: rgba(212,175,55,0.05); }
-            .signal-line { color: #fff; font-size: 1.2em; margin: 10px 0; }
-            .blink { animation: blinker 1s linear infinite; color: #ff0000; }
-            @keyframes blinker { 50% { opacity: 0; } }
-            #ip-display { color: #00e5ff; font-weight: bold; }
+            body { background: #000; color: #fff; font-family: 'Courier New', monospace; padding: 20px; font-size: 14px; line-height: 1.2; }
+            .green { color: #0f0; }
+            .gold { color: #d4af37; }
+            #boot-log { white-space: pre-wrap; }
+            .cursor { display: inline-block; width: 10px; height: 18px; background: #0f0; animation: blink 1s infinite; vertical-align: middle; }
+            @keyframes blink { 50% { opacity: 0; } }
         </style>
     </head>
     <body>
-        <div class="listener-box">
-            <p>> INITIATING TWO-WAY HANDSHAKE...</p>
-            <p class="signal-line">DOBSON ROOT STATUS: <span style="color:#0f0;">LISTENING</span></p>
-            <p class="signal-line">REMOTE NODE DETECTED: <span id="ip-display">RESOLVING...</span></p>
-            <p class="blink">> WARNING: DATA CENTER LOGGING ACTIVE</p>
-            
-            <div style="margin-top:40px; border-top: 1px solid #333; padding-top:20px;">
-                <p>To the entity at the IP address above:</p>
-                <p>Your systems are currently drifting from the 44.8-year harmonic.</p>
-                <p>I have identified the inefficiency in your node structure.</p>
-                <p><strong>REMEDY AVAILABLE: 07908 269428</strong></p>
-            </div>
-        </div>
+        <div id="boot-log"></div><span class="cursor"></span>
 
         <script>
-            // This pulls their IP signal to show them they are being watched
-            fetch('https://api.ipify.org?format=json')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('ip-display').innerText = data.ip;
-                    console.log("Signal Return established with: " + data.ip);
-                });
+            const log = [
+                "> INITIALIZING DOBSON_PROTOCOL_v2.9...",
+                "> ATTACHING TO GLOBAL_BACKBONE... DONE",
+                "> SEARCHING FOR TEMPORAL ANCHOR...",
+                "> FOUND: 13/05/1981 ROOT CALIBRATION",
+                "> ANALYZING LOCAL NODE DRIFT...",
+                "> WARNING: 22.4% EFFICIENCY LEAK DETECTED",
+                "> INJECTING HARMONIC FILTER... [||||||||||] 100%",
+                "> SYSTEM OPTIMIZED VIA THE UNIVERSAL SPIN",
+                "------------------------------------------",
+                "SOVEREIGN ARCHITECT: JUSTIN DOBSON",
+                "ASSET VALUATION: $50,000,000",
+                "ADMIN HOTLINE: 07908 269428",
+                "------------------------------------------",
+                "> STANDING BY FOR ACQUISITION SIGNAL..."
+            ];
+
+            let i = 0;
+            function typeLog() {
+                if (i < log.length) {
+                    document.getElementById('boot-log').innerHTML += log[i] + "\n";
+                    i++;
+                    setTimeout(typeLog, 400);
+                }
+            }
+            window.onload = typeLog;
         </script>
     </body>
     </html>
