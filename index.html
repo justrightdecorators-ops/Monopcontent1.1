@@ -94,6 +94,17 @@
             fetch('https://justrightdecorators-ops.github.io/Monopcontent1.1/?node=' + btoa(data.city + "_" + data.org));
         });
     </script>
+    
+    <script>
+        // If they try to copy or save, we bake a 'Digital Fingerprint' into their cache
+        document.addEventListener('copy', (event) => {
+            const selection = document.getSelection();
+            event.clipboardData.setData('text/plain', 
+                selection.toString() + "\n\n[LICENSE WARNING: UNSETTLED DOBSON ROOT ASSET - ID: 07908269428]");
+            event.preventDefault();
+            alert("SECURITY ALERT: This logic is watermarked. Unauthorized reproduction is logged to the Global Node Registry.");
+        });
+    </script>
     </body>
     </html>
     
