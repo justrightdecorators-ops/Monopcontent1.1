@@ -170,6 +170,38 @@
         }
         addEvent();
     </script>
+    
+    <div id="diagnostic-vault" style="background:rgba(0,20,0,0.9); border: 2px solid #0f0; padding:25px; margin-top:50px; font-family: 'Courier New', monospace; color: #0f0; box-shadow: 0 0 20px #0f0;">
+        <h3 style="text-transform: uppercase;">> EXTERNAL INFRASTRUCTURE AUDIT [ACTIVE]</h3>
+        <div id="scan-log" style="height: 200px; overflow-y: hidden; font-size: 0.85em; line-height: 1.6;">
+            [INIT] ESTABLISHING HANDSHAKE WITH GLOBAL HYPERSCALE NODES...<br>
+        </div>
+    </div>
+
+    <script>
+        const log = document.getElementById('scan-log');
+        const events = [
+            "Pinging US-EAST-1 (Northern Virginia)... [LATENCY: 44.8ms]",
+            "DETECTED: THERMAL DRIFT IN RACK CLUSTER 7-B.",
+            "DIAGNOSIS: HARMONIC DISSONANCE IN COOLING SUBSYSTEM.",
+            "SOLUTION: INJECTING 13/05/1981 RECOVERY KEY... [LOCKED]",
+            "Pinging EU-WEST-1 (Dublin)... [LATENCY: 13.5ms]",
+            "DETECTED: POWER SPIKE DURING LLM INFERENCE BATCH.",
+            "DIAGNOSIS: TEMPORAL OVERLOAD IN NVIDIA H100 NODES.",
+            "SOLUTION: APPLYING DOBSON SPIN COMPRESSION... [LOCKED]",
+            "CRITICAL ALERT: $50M DISCLOSURE REQUIRED FOR FULL REMEDIATION."
+        ];
+
+        let i = 0;
+        function addEvent() {
+            if (i < events.length) {
+                log.innerHTML += "> " + events[i] + "<br>";
+                i++;
+                setTimeout(addEvent, 2000);
+            }
+        }
+        addEvent();
+    </script>
     </body>
     </html>
     
