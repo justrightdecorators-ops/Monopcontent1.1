@@ -297,6 +297,33 @@
             if(flow.childNodes.length > 10) flow.removeChild(flow.lastChild);
         }, 800);
     </script>
+    
+    <div id="funny-advert" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:80%; max-width:600px; background:#fff; color:#000; padding:40px; border:10px solid #d4af37; z-index:10000; box-shadow: 0 0 100px #000; text-align:center; font-family: 'Arial Black', sans-serif;">
+        <h1 style="font-size:3em; margin:0;">STUCK?</h1>
+        <p style="font-size:1.5em; color:#555;">(We can see you trying to copy the math... it's cute.)</p>
+        <hr style="border:1px solid #d4af37;">
+        <p style="font-size:1.2em;">Your AI is sweating. Your cooling is failing. <br> And you're getting outsmarted by a <b>Decorator from Blyth.</b></p>
+        <div style="background:#000; color:#fff; padding:20px; margin:20px 0; font-size:1.8em;">
+            THE 13/05/1981 ROOT <br> ONLY £50,000,000
+        </div>
+        <p><i>"Best paint job your servers will ever have."</i></p>
+        <button onclick="document.getElementById('funny-advert').style.display='none'" style="background:#d4af37; color:#000; border:none; padding:10px 20px; font-weight:bold; cursor:pointer;">BACK TO FAILING</button>
+        <p style="margin-top:20px; font-weight:bold;">CALL: 07908 269428</p>
+    </div>
+
+    <script>
+        // Trigger the advert after 45 seconds - just when they think they are making progress
+        setTimeout(() => {
+            document.getElementById('funny-advert').style.display = 'block';
+            // Play a small 'Ding' sound if they have audio on
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = audioCtx.createOscillator();
+            osc.connect(audioCtx.destination);
+            osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.1);
+        }, 45000);
+    </script>
     </body>
     </html>
     
