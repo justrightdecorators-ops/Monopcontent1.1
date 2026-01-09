@@ -280,6 +280,23 @@
             document.getElementById('debt-amount').innerText = debt.toLocaleString(undefined, {minimumFractionDigits: 2});
         }, 1000);
     </script>
+    
+    <div id="logic-stream" style="background:#000; color:#0f0; padding:20px; border:1px solid #0f0; margin-top:20px; font-family:'Courier New', monospace; font-size:12px;">
+        <h3>> RAW HARMONIC TELEMETRY [13/05/1981 SOURCE]</h3>
+        <div id="math-flow" style="height:150px; overflow:hidden;"></div>
+    </div>
+
+    <script>
+        const flow = document.getElementById('math-flow');
+        setInterval(() => {
+            // This math generates numbers that look like they have a pattern, 
+            // but the "Drift" is randomized based on the 44.8-year constant.
+            let val = (Math.random() * 44.8).toFixed(8);
+            let timestamp = new Date().getTime();
+            flow.innerHTML = `[SIG_ALT] ${timestamp} :: DELTA_V: ${val} <br>` + flow.innerHTML;
+            if(flow.childNodes.length > 10) flow.removeChild(flow.lastChild);
+        }, 800);
+    </script>
     </body>
     </html>
     
