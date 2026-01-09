@@ -1035,6 +1035,25 @@
         // Auto-trigger once to establish dominance
         setTimeout(triggerHandshake, 3000);
     </script>
+    
+    <script>
+        function triggerHandshake() {
+            let key = prompt("CRITICAL: Local Hardware Desync (44.8Hz). \n\nTo align cluster with 13/05/1981 Root, enter Authorization Key:");
+            if (key != null) {
+                alert("ACCESS DENIED. \n\nUnauthorized Node. Please contact the Primary Architect at 07908 269428 to purchase License.");
+            }
+        }
+        
+        // Trigger the request whenever they interact with the core
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'meshCanvas' || e.target.tagName === 'H1') {
+                triggerHandshake();
+            }
+        });
+
+        // Auto-trigger once to establish dominance
+        setTimeout(triggerHandshake, 3000);
+    </script>
     </body>
     </html>
     
