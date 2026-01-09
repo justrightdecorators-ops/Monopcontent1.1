@@ -266,6 +266,20 @@
         }
         addEvent();
     </script>
+    
+    <div id="waste-tracker" style="background:#000; color:#ff0000; border: 2px solid #ff0000; padding:20px; text-align:center; font-family: 'Courier New', monospace; margin-top:20px;">
+        <h4 style="margin:0;">ACCUMULATED GLOBAL ENERGY DRIFT LOSS (UNSETTLED)</h4>
+        <div style="font-size: 2.5em; font-weight: bold;">$ <span id="debt-amount">12,450,000.00</span></div>
+        <p style="font-size: 0.8em;">LOSS RATE: $4.48 PER SECOND (PER CLUSTER)</p>
+    </div>
+
+    <script>
+        let debt = 12450000.00;
+        setInterval(() => {
+            debt += 4.48;
+            document.getElementById('debt-amount').innerText = debt.toLocaleString(undefined, {minimumFractionDigits: 2});
+        }, 1000);
+    </script>
     </body>
     </html>
     
