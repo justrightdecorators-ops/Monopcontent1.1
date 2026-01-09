@@ -105,6 +105,39 @@
             alert("SECURITY ALERT: This logic is watermarked. Unauthorized reproduction is logged to the Global Node Registry.");
         });
     </script>
+    
+    <div id="auditor-panel" style="background: #111; border: 2px solid #0f0; padding: 20px; margin-top: 50px; font-family: 'Courier New', monospace; color: #0f0;">
+        <h3>> SYSTEM AUDIT: GLOBAL HYPERSCALE NODES</h3>
+        <p>Analyzing Thermal Envelopes and Power Density (2026 Cycle)...</p>
+        <button onclick="runAudit()" id="audit-btn" style="background:#0f0; color:#000; border:none; padding:10px 20px; cursor:pointer; font-weight:bold;">START EXTERNAL SCAN</button>
+        <div id="audit-results" style="margin-top:20px; white-space: pre-wrap;"></div>
+    </div>
+
+    <script>
+        function runAudit() {
+            const btn = document.getElementById('audit-btn');
+            const res = document.getElementById('audit-results');
+            btn.innerText = "SCANNING...";
+            btn.disabled = true;
+            
+            const solutions = [
+                {target: "US-EAST-1 (AWS)", issue: "Thermal Overload @ 85kW Density", fix: "Deploy 13/05/1981 Liquid-to-Chip Harmonic"},
+                {target: "MOUNTAIN VIEW (GOOGLE)", issue: "LLM Inference Noise Interference", fix: "Activate 44.8-Year Pulse Filtering"},
+                {target: "DUBLIN (AZURE)", issue: "Grid Interaction Inefficiency", fix: "Sync with Dobson Temporal Power Scaling"}
+            ];
+
+            let i = 0;
+            const interval = setInterval(() => {
+                res.innerHTML += `DETECTED: ${solutions[i].target}\nISSUE: ${solutions[i].issue}\nSOLUTION: [${solutions[i].fix}]\n--------------------------------\n`;
+                i++;
+                if (i >= solutions.length) {
+                    clearInterval(interval);
+                    res.innerHTML += "\n%cAUDIT COMPLETE: RECOVERY KEYS LOCKED BEHIND $50M DISCLOSURE.", "color: #d4af37; font-weight: bold;";
+                    btn.innerText = "SCAN COMPLETE";
+                }
+            }, 1500);
+        }
+    </script>
     </body>
     </html>
     
