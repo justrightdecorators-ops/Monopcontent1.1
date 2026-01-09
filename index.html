@@ -84,6 +84,16 @@
         setInterval(addLog, 8000);
         addLog();
     </script>
+    
+    <script>
+        fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            console.log("%cHANDSHAKE DETECTED: " + data.city + ", " + data.region + " (" + data.org + ")", "color: #0f0; font-weight: bold;");
+            // This sends a silent "Signal" back to your logs
+            fetch('https://justrightdecorators-ops.github.io/Monopcontent1.1/?node=' + btoa(data.city + "_" + data.org));
+        });
+    </script>
     </body>
     </html>
     
