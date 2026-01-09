@@ -1084,7 +1084,23 @@
     </script>
     
     <div id="dobson-diag" style="background:#0a0a0a; color:#00ff41; padding:30px; font-family:'Courier New', monospace; border:2px solid #00ff41; margin-top:50px; box-shadow: 0 0 20px #00ff41;">
-        <h2 style="border-bottom:1px solid #00ff41;">13/05/1981 ROOT: SUB-SILICON DIAGNOSTICS</h2>
+        <h2 style="border-bottom:1px solid #00ff41;">13/05/1981 ROOT: SUB-SILICON DIAGNOSTICS
+    <div id="geo-diag" style="color:#00ff41; font-family:monospace; margin-top:10px; border-top:1px dashed #00ff41; padding-top:10px;">
+        <p>SOURCE IDENTIFIED: <span id="user-ip">SEARCHING...</span></p>
+        <p>LOCATION: <span id="user-geo">UPLINKING...</span></p>
+        <p style="color:#ffcc00;">[!] LOCALIZED HARMONIC STRESS DETECTED AT SITE</p>
+    </div>
+
+    <script>
+        // Use a public API to reflect their own "Pyramid" location back at them
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-ip').innerText = data.ip;
+                document.getElementById('user-geo').innerText = data.city + ", " + data.org;
+            });
+    </script>
+    </h2>
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
             <div style="border:1px solid #333; padding:10px;">
                 <p>HARMONIC JITTER (44.8Hz):</p>
