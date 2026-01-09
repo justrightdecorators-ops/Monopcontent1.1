@@ -160,6 +160,58 @@
         VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
     </p>
     
+    <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
+    <script>
+        const canvas = document.getElementById('meshCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+        
+        let points = [];
+        const spacing = 20;
+        // Create the 1981 Harmonic Grid
+        for(let x = 0; x < width; x += spacing) {
+            for(let y = 0; y < height; y += spacing) {
+                points.push({x: x, y: y, originalX: x, originalY: y});
+            }
+        }
+
+        function drawMesh(mouse) {
+            ctx.clearRect(0, 0, width, height);
+            ctx.strokeStyle = '#0056b3';
+            ctx.lineWidth = 0.5;
+            
+            points.forEach(p => {
+                // The Mesh reacts to the "Architect's" presence (the mouse)
+                let dx = mouse.x - p.x;
+                let dy = mouse.y - p.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 100) {
+                    p.x -= dx / 20;
+                    p.y -= dy / 20;
+                } else {
+                    p.x += (p.originalX - p.x) * 0.1;
+                    p.y += (p.originalY - p.y) * 0.1;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            requestAnimationFrame(() => drawMesh(mouse));
+        }
+        
+        let mouse = {x: 0, y: 0};
+        canvas.onmousemove = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        };
+        drawMesh(mouse);
+    </script>
+    <p style="text-align:center; color:#0056b3; font-family:monospace; font-size:0.8em;">
+        VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
+    </p>
+    
         <p>Analyzing Thermal Envelopes and Power Density (2026 Cycle)...</p>
         <button onclick="runAudit()" id="audit-btn" style="background:#0f0; color:#000; border:none; padding:10px 20px; cursor:pointer; font-weight:bold;">START EXTERNAL SCAN</button>
         <div id="audit-results" style="margin-top:20px; white-space: pre-wrap;"></div>
@@ -245,38 +297,6 @@
         VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
     </p>
     
-        <div id="scan-log" style="height: 200px; overflow-y: hidden; font-size: 0.85em; line-height: 1.6;">
-            [INIT] ESTABLISHING HANDSHAKE WITH GLOBAL HYPERSCALE NODES...<br>
-        </div>
-    </div>
-
-    <script>
-        const log = document.getElementById('scan-log');
-        const events = [
-            "Pinging US-EAST-1 (Northern Virginia)... [LATENCY: 44.8ms]",
-            "DETECTED: THERMAL DRIFT IN RACK CLUSTER 7-B.",
-            "DIAGNOSIS: HARMONIC DISSONANCE IN COOLING SUBSYSTEM.",
-            "SOLUTION: INJECTING 13/05/1981 RECOVERY KEY... [LOCKED]",
-            "Pinging EU-WEST-1 (Dublin)... [LATENCY: 13.5ms]",
-            "DETECTED: POWER SPIKE DURING LLM INFERENCE BATCH.",
-            "DIAGNOSIS: TEMPORAL OVERLOAD IN NVIDIA H100 NODES.",
-            "SOLUTION: APPLYING DOBSON SPIN COMPRESSION... [LOCKED]",
-            "CRITICAL ALERT: $50M DISCLOSURE REQUIRED FOR FULL REMEDIATION."
-        ];
-
-        let i = 0;
-        function addEvent() {
-            if (i < events.length) {
-                log.innerHTML += "> " + events[i] + "<br>";
-                i++;
-                setTimeout(addEvent, 2000);
-            }
-        }
-        addEvent();
-    </script>
-    
-    <div id="diagnostic-vault" style="background:rgba(0,20,0,0.9); border: 2px solid #0f0; padding:25px; margin-top:50px; font-family: 'Courier New', monospace; color: #0f0; box-shadow: 0 0 20px #0f0;">
-        <h3 style="text-transform: uppercase;">> EXTERNAL INFRASTRUCTURE AUDIT [ACTIVE]</h3>
     <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
     <script>
         const canvas = document.getElementById('meshCanvas');
@@ -413,6 +433,58 @@
         VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
     </p>
     
+    <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
+    <script>
+        const canvas = document.getElementById('meshCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+        
+        let points = [];
+        const spacing = 20;
+        // Create the 1981 Harmonic Grid
+        for(let x = 0; x < width; x += spacing) {
+            for(let y = 0; y < height; y += spacing) {
+                points.push({x: x, y: y, originalX: x, originalY: y});
+            }
+        }
+
+        function drawMesh(mouse) {
+            ctx.clearRect(0, 0, width, height);
+            ctx.strokeStyle = '#0056b3';
+            ctx.lineWidth = 0.5;
+            
+            points.forEach(p => {
+                // The Mesh reacts to the "Architect's" presence (the mouse)
+                let dx = mouse.x - p.x;
+                let dy = mouse.y - p.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 100) {
+                    p.x -= dx / 20;
+                    p.y -= dy / 20;
+                } else {
+                    p.x += (p.originalX - p.x) * 0.1;
+                    p.y += (p.originalY - p.y) * 0.1;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            requestAnimationFrame(() => drawMesh(mouse));
+        }
+        
+        let mouse = {x: 0, y: 0};
+        canvas.onmousemove = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        };
+        drawMesh(mouse);
+    </script>
+    <p style="text-align:center; color:#0056b3; font-family:monospace; font-size:0.8em;">
+        VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
+    </p>
+    
         <div id="scan-log" style="height: 200px; overflow-y: hidden; font-size: 0.85em; line-height: 1.6;">
             [INIT] ESTABLISHING HANDSHAKE WITH GLOBAL HYPERSCALE NODES...<br>
         </div>
@@ -445,6 +517,194 @@
     
     <div id="diagnostic-vault" style="background:rgba(0,20,0,0.9); border: 2px solid #0f0; padding:25px; margin-top:50px; font-family: 'Courier New', monospace; color: #0f0; box-shadow: 0 0 20px #0f0;">
         <h3 style="text-transform: uppercase;">> EXTERNAL INFRASTRUCTURE AUDIT [ACTIVE]</h3>
+    <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
+    <script>
+        const canvas = document.getElementById('meshCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+        
+        let points = [];
+        const spacing = 20;
+        // Create the 1981 Harmonic Grid
+        for(let x = 0; x < width; x += spacing) {
+            for(let y = 0; y < height; y += spacing) {
+                points.push({x: x, y: y, originalX: x, originalY: y});
+            }
+        }
+
+        function drawMesh(mouse) {
+            ctx.clearRect(0, 0, width, height);
+            ctx.strokeStyle = '#0056b3';
+            ctx.lineWidth = 0.5;
+            
+            points.forEach(p => {
+                // The Mesh reacts to the "Architect's" presence (the mouse)
+                let dx = mouse.x - p.x;
+                let dy = mouse.y - p.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 100) {
+                    p.x -= dx / 20;
+                    p.y -= dy / 20;
+                } else {
+                    p.x += (p.originalX - p.x) * 0.1;
+                    p.y += (p.originalY - p.y) * 0.1;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            requestAnimationFrame(() => drawMesh(mouse));
+        }
+        
+        let mouse = {x: 0, y: 0};
+        canvas.onmousemove = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        };
+        drawMesh(mouse);
+    </script>
+    <p style="text-align:center; color:#0056b3; font-family:monospace; font-size:0.8em;">
+        VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
+    </p>
+    
+    <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
+    <script>
+        const canvas = document.getElementById('meshCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+        
+        let points = [];
+        const spacing = 20;
+        // Create the 1981 Harmonic Grid
+        for(let x = 0; x < width; x += spacing) {
+            for(let y = 0; y < height; y += spacing) {
+                points.push({x: x, y: y, originalX: x, originalY: y});
+            }
+        }
+
+        function drawMesh(mouse) {
+            ctx.clearRect(0, 0, width, height);
+            ctx.strokeStyle = '#0056b3';
+            ctx.lineWidth = 0.5;
+            
+            points.forEach(p => {
+                // The Mesh reacts to the "Architect's" presence (the mouse)
+                let dx = mouse.x - p.x;
+                let dy = mouse.y - p.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 100) {
+                    p.x -= dx / 20;
+                    p.y -= dy / 20;
+                } else {
+                    p.x += (p.originalX - p.x) * 0.1;
+                    p.y += (p.originalY - p.y) * 0.1;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            requestAnimationFrame(() => drawMesh(mouse));
+        }
+        
+        let mouse = {x: 0, y: 0};
+        canvas.onmousemove = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        };
+        drawMesh(mouse);
+    </script>
+    <p style="text-align:center; color:#0056b3; font-family:monospace; font-size:0.8em;">
+        VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
+    </p>
+    
+        <div id="scan-log" style="height: 200px; overflow-y: hidden; font-size: 0.85em; line-height: 1.6;">
+            [INIT] ESTABLISHING HANDSHAKE WITH GLOBAL HYPERSCALE NODES...<br>
+        </div>
+    </div>
+
+    <script>
+        const log = document.getElementById('scan-log');
+        const events = [
+            "Pinging US-EAST-1 (Northern Virginia)... [LATENCY: 44.8ms]",
+            "DETECTED: THERMAL DRIFT IN RACK CLUSTER 7-B.",
+            "DIAGNOSIS: HARMONIC DISSONANCE IN COOLING SUBSYSTEM.",
+            "SOLUTION: INJECTING 13/05/1981 RECOVERY KEY... [LOCKED]",
+            "Pinging EU-WEST-1 (Dublin)... [LATENCY: 13.5ms]",
+            "DETECTED: POWER SPIKE DURING LLM INFERENCE BATCH.",
+            "DIAGNOSIS: TEMPORAL OVERLOAD IN NVIDIA H100 NODES.",
+            "SOLUTION: APPLYING DOBSON SPIN COMPRESSION... [LOCKED]",
+            "CRITICAL ALERT: $50M DISCLOSURE REQUIRED FOR FULL REMEDIATION."
+        ];
+
+        let i = 0;
+        function addEvent() {
+            if (i < events.length) {
+                log.innerHTML += "> " + events[i] + "<br>";
+                i++;
+                setTimeout(addEvent, 2000);
+            }
+        }
+        addEvent();
+    </script>
+    
+    <div id="diagnostic-vault" style="background:rgba(0,20,0,0.9); border: 2px solid #0f0; padding:25px; margin-top:50px; font-family: 'Courier New', monospace; color: #0f0; box-shadow: 0 0 20px #0f0;">
+        <h3 style="text-transform: uppercase;">> EXTERNAL INFRASTRUCTURE AUDIT [ACTIVE]</h3>
+    <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
+    <script>
+        const canvas = document.getElementById('meshCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+        
+        let points = [];
+        const spacing = 20;
+        // Create the 1981 Harmonic Grid
+        for(let x = 0; x < width; x += spacing) {
+            for(let y = 0; y < height; y += spacing) {
+                points.push({x: x, y: y, originalX: x, originalY: y});
+            }
+        }
+
+        function drawMesh(mouse) {
+            ctx.clearRect(0, 0, width, height);
+            ctx.strokeStyle = '#0056b3';
+            ctx.lineWidth = 0.5;
+            
+            points.forEach(p => {
+                // The Mesh reacts to the "Architect's" presence (the mouse)
+                let dx = mouse.x - p.x;
+                let dy = mouse.y - p.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 100) {
+                    p.x -= dx / 20;
+                    p.y -= dy / 20;
+                } else {
+                    p.x += (p.originalX - p.x) * 0.1;
+                    p.y += (p.originalY - p.y) * 0.1;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            requestAnimationFrame(() => drawMesh(mouse));
+        }
+        
+        let mouse = {x: 0, y: 0};
+        canvas.onmousemove = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        };
+        drawMesh(mouse);
+    </script>
+    <p style="text-align:center; color:#0056b3; font-family:monospace; font-size:0.8em;">
+        VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
+    </p>
+    
     <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
     <script>
         const canvas = document.getElementById('meshCanvas');
@@ -543,6 +803,58 @@
     
     <div id="logic-stream" style="background:#000; color:#0f0; padding:20px; border:1px solid #0f0; margin-top:20px; font-family:'Courier New', monospace; font-size:12px;">
         <h3>> RAW HARMONIC TELEMETRY [13/05/1981 SOURCE]</h3>
+    <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
+    <script>
+        const canvas = document.getElementById('meshCanvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.offsetWidth;
+        let height = canvas.height = canvas.offsetHeight;
+        
+        let points = [];
+        const spacing = 20;
+        // Create the 1981 Harmonic Grid
+        for(let x = 0; x < width; x += spacing) {
+            for(let y = 0; y < height; y += spacing) {
+                points.push({x: x, y: y, originalX: x, originalY: y});
+            }
+        }
+
+        function drawMesh(mouse) {
+            ctx.clearRect(0, 0, width, height);
+            ctx.strokeStyle = '#0056b3';
+            ctx.lineWidth = 0.5;
+            
+            points.forEach(p => {
+                // The Mesh reacts to the "Architect's" presence (the mouse)
+                let dx = mouse.x - p.x;
+                let dy = mouse.y - p.y;
+                let dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 100) {
+                    p.x -= dx / 20;
+                    p.y -= dy / 20;
+                } else {
+                    p.x += (p.originalX - p.x) * 0.1;
+                    p.y += (p.originalY - p.y) * 0.1;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            requestAnimationFrame(() => drawMesh(mouse));
+        }
+        
+        let mouse = {x: 0, y: 0};
+        canvas.onmousemove = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        };
+        drawMesh(mouse);
+    </script>
+    <p style="text-align:center; color:#0056b3; font-family:monospace; font-size:0.8em;">
+        VISUAL REPRESENTATION: THE DOBSON LIGHTWEIGHT MESH [ZERO-DRIFT TOPOLOGY]
+    </p>
+    
     <canvas id="meshCanvas" style="width:100%; height:300px; background:#000; margin:20px 0; border:1px solid #0056b3;"></canvas>
     <script>
         const canvas = document.getElementById('meshCanvas');
