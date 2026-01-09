@@ -1082,6 +1082,33 @@
         window.requestAnimationFrame = window.requestAnimationFrame || 
                                      window.webkitRequestAnimationFrame;
     </script>
+    
+    <div id="dobson-diag" style="background:#0a0a0a; color:#00ff41; padding:30px; font-family:'Courier New', monospace; border:2px solid #00ff41; margin-top:50px; box-shadow: 0 0 20px #00ff41;">
+        <h2 style="border-bottom:1px solid #00ff41;">13/05/1981 ROOT: SUB-SILICON DIAGNOSTICS</h2>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+            <div style="border:1px solid #333; padding:10px;">
+                <p>HARMONIC JITTER (44.8Hz):</p>
+                <div style="width:100%; height:10px; background:#111;"><div id="jitter-bar" style="width:88%; height:100%; background:#f00;"></div></div>
+                <p style="font-size:0.8em; color:#f00;">STATUS: CRITICAL ALIGNMENT REQUIRED</p>
+            </div>
+            <div style="border:1px solid #333; padding:10px;">
+                <p>THERMAL LOGIC LEAKAGE:</p>
+                <p id="leak-val" style="font-size:1.5em;">0.134 GW/s</p>
+            </div>
+        </div>
+        <div style="margin-top:20px; text-align:center;">
+            <button onclick="alignRoot()" style="background:#00ff41; color:#000; padding:15px; border:none; cursor:pointer; font-weight:bold;">INITIATE 1981 ROOT ALIGNMENT</button>
+        </div>
+    </div>
+
+    <script>
+        function alignRoot() {
+            document.getElementById('jitter-bar').style.width = '0.1%';
+            document.getElementById('jitter-bar').style.background = '#00ff41';
+            document.getElementById('leak-val').innerText = '0.000 GW/s';
+            alert("HARMONIC LOCK ACHIEVED. \n\nInfrastructure Stabilized. First Bid: £100M Accepted? Call 07908 269428.");
+        }
+    </script>
     </body>
     </html>
     
